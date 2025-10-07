@@ -1,11 +1,385 @@
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  margin: 0;
-  padding: 0;
+/* ===== Fondo global verde difuminado ===== */
+
+/* Evitar scroll horizontal en toda la página */
+html, body { width: 100%; overflow-x: hidden; }
+
+:root{
+  --verde-ribas: #097C3F;
+  --azul-h1: #002b5c;
 }
-header {
-  background-color: #0077b6;
-  color: white;
-  padding: 2rem;
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Inter, Arial, sans-serif;
+  color: #0f172a;
+  line-height: 1.5;
+}
+
+/* --- Navbar --- */
+
+header{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: transparent; /* se ve el fondo verde del body */
+}
+
+header.is-stuck { box-shadow: 0 6px 18px rgba(15,23,42,.06); }
+
+.navbar{
+  /* centramos la barra dentro del ancho máximo de la página */
+  width: 100%;
+  margin: 44px 0 0;
+  padding: 0 56px;  
+  display: flex;
+  align-items: center;       /* 🔹 centra verticalmente logo + menú */
+  justify-content: space-between;
+  gap: 24px;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+/* Fuente de los títulos del navbar */
+.nav-links a,
+.contact-info a {
+  font-family: "Nunito", "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+  letter-spacing: 0.2px; /* un toque de aire para que respire */
+}
+
+/* Logo */
+.logo{ display:flex; align-items:center; }
+.logo img{
+  height: 72px;
+  width: auto;
+}
+
+/* Menú */
+.nav-links{
+  display: flex;
+  align-items: center;
+  justify-content: center;   /* 🔹 menú centrado respecto a la barra */
+  gap: 12px;
+  flex: 1;                   /* 🔹 ocupa el espacio entre logo y vacío */
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links a{
+  font-size: 1.25rem;
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #334155;
+  font-weight: 600;
+  transition: all .22s ease;
+  background: transparent;
+  border: none;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+  background: #097C3F;   /* verde corporativo */
+  color: #ffffff;         /* texto blanco */
+  border-color: transparent;
+  transform: translateY(-1px);
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;     /* una línea encima de otra */
+  align-items: flex-end;
+  gap: 4px;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.contact-info a {
+  color: #334155;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+/* Hover en verde corporativo */
+.contact-info a:hover {
+  color: #097C3F;
+}
+
+/* Teléfono con icono */
+.contact-info .phone::before {
+  content: "📞 ";
+  font-size: 1rem;
+}
+
+/* WhatsApp con icono */
+.contact-info .whatsapp::before {
+  content: "💬 ";
+  font-size: 1rem;
+}
+
+/* Ocultar el botón hamburguesa (esa rayita bajo el logo) */
+.menu-toggle{ display: none; }
+
+
+
+/* -------HERO------- */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1rem;
+  min-height: 70vh;
+  background-color: #ffffff;
+}
+
+/* 1) El contenedor mantiene el borde redondeado y recorta lo que sobresalga */
+.hero-container{
+  width: 72%;
+  max-width: 1400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;          /* centra verticalmente el texto */
+  padding: 2rem 4rem 0.5rem; /* menos alto; poco padding inferior */
+  border-radius: 3rem;
+  position: relative;
+  overflow: hidden;             /* la imagen se recorta con el borde redondeado */
+  min-height: 410px;            /* en vez de alturas grandes */
+}
+
+/* Difuminado verde eléctrico en esquinas */
+.hero-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top left, rgba(111, 255, 176, 0.25), transparent 60%),
+    radial-gradient(circle at bottom right, rgba(111, 255, 176, 0.25), transparent 60%);
+  border-radius: inherit;
+  z-index: 0;
+}
+
+/* 2) Texto: le damos más ancho para que avance hacia la derecha */
+.hero-text{
+  flex: 0 1 60%;
+  max-width: 60%;
+  margin-left: 40px;
+  margin-top: -6px;             /* pequeño empuje hacia arriba */
+}
+
+.hero-text h1 {
+  font-family: "Nunito", "Arial Rounded MT Bold", sans-serif;
+  font-size: 3rem;
+  color: #002b5c;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: 1.25rem;
+  color: #444;
+  margin-bottom: 2rem;
+}
+
+/* ---------- Botones del Hero ---------- */
+
+.hero-buttons {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.btn-primary,
+.btn-secondary {
+  color: #097C3F;                        /* texto del color del navbar */
+  border: 2px solid #097C3F;             /* mismo color en el borde */
+  background-color: transparent;         /* sin relleno por defecto */
+  padding: 0.9rem 1.8rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Hover: fondo sólido y texto blanco */
+.btn-primary:hover {
+  background-color: #097C3F;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(9, 124, 63, 0.25); /* sombra sutil al pasar el ratón */
+}
+.btn-secondary:hover {
+  background-color: #097C3F;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(9, 124, 63, 0.25); /* sombra sutil al pasar el ratón */
+}
+
+/* Diferencia opcional entre ambos (si quieres conservar contraste leve) */
+.btn-primary:hover, .btn-secondary:hover {
+  opacity: 1; /* vuelve al tono completo en hover */
+}
+.btn-primary, .btn-secondary {
+  border-width: 2px;
+  opacity: 0.85; /* un poco más tenue visualmente */
+}
+
+
+/* -------Imagen del hero---------- */
+
+.hero-image{
+  z-index:1;
+  flex: 0 1 35%;
+  display:flex;
+  justify-content: flex-end;   /* empuja la imagen hacia el borde derecho */
+  align-items:center;
+  margin-right: 80px;
+}
+
+.hero-image img{
+  width:100%;
+  max-width: 260px;            
+  height:auto;
+  filter: drop-shadow(0 10px 30px rgba(0,0,0,0.1));
+}
+
+.hero-image-2{
+  flex: 0 1 40%;
+  display: flex;
+  justify-content: flex-end;
+  align-self: flex-end;         /* clave: baja SOLO la columna de la imagen */
+  margin-right: 4rem;           /* distancia al borde derecho */
+}
+
+.hero-image-2 img{
+  display: block;
+  width: auto;
+  height: 360px;                /* ajusta aquí (340–400px) */
+  object-fit: contain;
+  transform: translateY(6px);   /* apoya visualmente en el borde inferior */
+  filter: drop-shadow(0 10px 24px rgba(0,0,0,.12));
+}
+
+/* ====== Experiència amb degradat translúcid ====== */
+:root{
+  --mint-light: rgba(111, 255, 176, 0.25);
+  --mint-solid: #6fffB0;
+  --text-dark: #0c2440;
+  --radius-2xl: 24px;
+}
+
+.section{
+  padding: 6rem 0;
+}
+
+.container{
+  width:min(1100px, 92%);
+  margin-inline:auto;
+}
+
+.font-rounded{
+  font-family: "Arial Rounded MT Bold","Arial Rounded MT","Nunito",system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+  letter-spacing:.2px;
+}
+
+/* Encabezado */
+.exp-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  margin-bottom:1.5rem;
+}
+
+.exp-header h2{
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  color: var(--text-dark);
+}
+
+/* Botón “veure més” */
+.btn-outline{
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  padding:.75rem 1.1rem;
+  border:2px solid var(--text-dark);
+  border-radius:999px;
+  font-weight:700;
+  text-transform:lowercase;
+  color:var(--text-dark);
+  transition:transform .2s ease, background .2s ease, color .2s ease;
+}
+
+.btn-outline:hover{
+  background: var(--text-dark);
+  color:#fff;
+  transform:translateY(-1px);
+}
+
+/* Grid */
+.exp-grid{
+  display:grid;
+  gap:1.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  padding-top: 1rem;
+}
+
+/* Tarjetas */
+.exp-card {
+  position: relative;
+  display: block;           /* permite que el enlace ocupe toda la tarjeta */
+  text-decoration: none;    /* sin subrayado */
+  color: var(--text-dark);  /* mantiene el color del texto */
+  background:
+    radial-gradient(circle at top left, rgba(111, 255, 176, 0.25), transparent 70%),
+    radial-gradient(circle at bottom right, rgba(111, 255, 176, 0.25), transparent 70%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: var(--radius-2xl);
+  padding: 1.6rem 1.6rem 4.2rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  min-height: 170px;
+  transition: transform .2s ease, box-shadow .2s ease;
+  isolation: isolate;
+  border: 1px solid rgba(255,255,255,0.5);
+}
+
+.exp-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 36px rgba(0,0,0,.12);
+}
+
+/* Título dentro de la tarjeta */
+.exp-card h3{
+  margin:0;
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  color: var(--text-dark);
+  z-index: 1;
+  position: relative;
+}
+
+/* Icono “apoyado” en esquina inferior izquierda */
+.exp-card__icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.25;
+  z-index: 0;
+}
+
+.exp-card__icon img {
+  width: 90px;
+  height: auto;
+  filter: brightness(0) saturate(100%) invert(20%) sepia(90%) saturate(1800%) hue-rotate(95deg) brightness(80%) contrast(110%);
+  opacity: 2;
+  transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
+}
+
+.exp-card:hover .exp-card__icon img {
+  transform: scale(1.1);
+  filter: brightness(0) saturate(100%) invert(20%) sepia(90%) saturate(2000%) hue-rotate(95deg) brightness(95%) contrast(110%);
+  opacity: 4;
 }

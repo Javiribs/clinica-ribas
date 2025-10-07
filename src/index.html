@@ -1,17 +1,137 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="cat">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet">
   <title>Clínica Dental Ribas</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styles/reset.css" />
+  <link rel="stylesheet" href="styles/style.css" />
+  <!-- Favicon -->
+    <link rel="icon" type="image/webp" sizes="32x32" href="img/favicon.webp">
+    <link rel="icon" type="image/webp" sizes="16x16" href="img/favicon.webp">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon.webp">
+    <meta name="theme-color" content="#00c2ff"> <!-- color de la empresa -->
 </head>
+
 <body>
+  <!-- 🔹 NAVBAR CLÍNICA DENTAL RIBAS -->
   <header>
-    <h1>Clínica Dental Ribas</h1>
+    <nav class="navbar">
+        <!-- Logo -->
+        <a href="index.html" class="logo">
+          <img src="img/logo-clinica-ribas.webp" alt="Clínica Dental Ribas Logo" />
+        </a>
+
+        <!-- Botón menú móvil -->
+        <button class="menu-toggle" aria-label="Abrir menú">
+          <span class="hamburger"></span>
+        </button>
+
+        <!-- Menú principal -->
+        <ul class="nav-links">
+          <li><a href="tractaments.html">Tractaments</a></li>
+          <li><a href="equip.html">Equip</a></li>
+          <li><a href="instal·lacions.html">Instal·lacions</a></li>
+          <li><a href="mútues.html">Mútues</a></li>
+          <li><a href="contacte.html">Contacte</a></li>
+        </ul>
+
+        <!-- Info de contacto -->
+        <div class="contact-info">
+          <a href="tel:+34972213241" class="phone">Tlf. 972 21 32 41</a>
+          <a href="https://wa.me/34639415461" target="_blank" class="whatsapp">WhatsApp. 639 41 54 61</a>
+        </div>
+    </nav>
   </header>
+  
   <main>
-    <p>Página en construcción.</p>
+    <!-- HERO -->
+     <!--
+    <section class="hero">
+      <div class="hero-container">
+        <div class="hero-text">
+          <h1>Des de 1983, cuidant el teu somriure</h1>
+          <p>Experiència, tecnologia i proximitat a Girona.</p>
+          <div class="hero-buttons">
+            <a href="contacte.html" class="btn-primary">Demana cita</a>
+            <a href="equip.html" class="btn-secondary">Coneix-nos</a>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <img src="img/hero-foto-logo-gran.webp" alt="Logo foto" />
+        </div>
+      </div>
+    </section>
+    -->
+
   </main>
+
+  <!-- HERO -->
+    <section class="hero">
+      <div class="hero-container">
+        <div class="hero-text">
+          <h1>Emplenant Girona de somriures des de 1983</h1>
+          <p>Experiència, tecnologia i proximitat al centre de la ciutat.</p>
+          <div class="hero-buttons">
+            <a href="contacte.html" class="btn-primary">Demana cita</a>
+            <a href="equip.html" class="btn-secondary">Coneix-nos</a>
+          </div>
+        </div>
+
+        <div class="hero-image-2">
+          <img src="img/hero-foto.webp" alt="Logo foto" />
+        </div>
+      </div>
+    </section>
+
+  <!-- 🔹 EXPERIÈNCIA -->
+    <section class="experience section">
+      <div class="container exp-header">
+        <h2 class="font-rounded">La nostra experiència</h2>
+        <a class="btn-primary" href="tractaments.html" aria-label="Veure tots els tractaments">
+          Veure tots
+        </a>
+      </div>
+
+      <div class="container exp-grid">
+       <!-- Card 1 -->
+        <a href="endodoncia.html" class="exp-card">
+          <div class="exp-card__icon" aria-hidden="true">
+            <img src="img/icons/013-implant.svg" alt="" />
+          </div>
+          <h3 class="font-rounded">Endodòncia</h3>
+        </a>
+
+        <!-- Card 2 -->
+        <a href="exodoncia.html" class="exp-card">
+          <div class="exp-card__icon" aria-hidden="true">
+            <img src="img/icons/019-extraction.svg" alt="" />
+          </div>
+          <h3 class="font-rounded">Exodòncia</h3>
+        </a>
+
+        <!-- Card 3 -->
+        <a href="ortodoncia.html" class="exp-card">
+          <div class="exp-card__icon" aria-hidden="true">
+            <img src="img/icons/010-braces.svg" alt="" />
+          </div>
+          <h3 class="font-rounded">Ortodòncia</h3>
+        </a>
+
+        <!-- Card 4 -->
+        <a href="blanqueig.html" class="exp-card">
+          <div class="exp-card__icon" aria-hidden="true">
+            <img src="img/icons/011-drill.svg" alt="" />
+          </div>
+          <h3 class="font-rounded">Blanqueig</h3>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
 </body>
 </html>
