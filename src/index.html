@@ -100,7 +100,7 @@
        <!-- Card 1 -->
         <a href="endodoncia.html" class="exp-card">
           <div class="exp-card__icon" aria-hidden="true">
-            <img src="img/icons/013-implant.svg" alt="" />
+            <img src="img/icons/030-root canal.svg" alt="icona endodoncia" />
           </div>
           <h3 class="font-rounded">Endodòncia</h3>
         </a>
@@ -108,7 +108,7 @@
         <!-- Card 2 -->
         <a href="exodoncia.html" class="exp-card">
           <div class="exp-card__icon" aria-hidden="true">
-            <img src="img/icons/019-extraction.svg" alt="" />
+            <img src="img/icons/019-extraction.svg" alt="icona exodoncia" />
           </div>
           <h3 class="font-rounded">Exodòncia</h3>
         </a>
@@ -116,7 +116,7 @@
         <!-- Card 3 -->
         <a href="ortodoncia.html" class="exp-card">
           <div class="exp-card__icon" aria-hidden="true">
-            <img src="img/icons/010-braces.svg" alt="" />
+            <img src="img/icons/010-braces.svg" alt="icona ortodoncia" />
           </div>
           <h3 class="font-rounded">Ortodòncia</h3>
         </a>
@@ -124,14 +124,119 @@
         <!-- Card 4 -->
         <a href="blanqueig.html" class="exp-card">
           <div class="exp-card__icon" aria-hidden="true">
-            <img src="img/icons/011-drill.svg" alt="" />
+            <img src="img/icons/008-tooth.svg" alt="icona blanqueig" />
           </div>
           <h3 class="font-rounded">Blanqueig</h3>
         </a>
       </div>
     </section>
 
+  <!-- 🔹 SECCIÓN LA CLÍNICA HERO -->
+    <section class="clinica-wrap">
+      <div class="clinica-card" style="--bg: url('../img/foto-clinica-home.webp')">
+        <div class="clinica-card__content">
+          <div class="clinica-card__text">
+            <h2 class="font-rounded">Una clínica amb més de 40 anys d'experiència</h2>
+            <p>
+              Tracte proper, tecnologia d'avantguarda i un equip compromès amb el teu somriure.
+            </p>
+          </div>
+
+          <a href="contacte.html" class="btn-primary">Descobreix més</a>
+        </div>
+      </div>
+    </section>
+  
+  <!-- 🔹 SECCIÓN DESCRIPCIÓN -->
+    <section class="invest">
+      <div class="invest-content">
+
+        <!-- Texto principal -->
+        <div class="invest-text">
+          <h2 class="font-rounded">Inverteix en el teu somriure</h2>
+          <p>
+            El teu somriure és una de les teves millors inversions. Cuidar-lo no és només una qüestió estètica,
+            sinó també de salut i benestar general.
+          </p>
+          <a href="contacte.html" class="btn-primary">Contacta amb nosaltres</a>
+        </div>
+
+        <!-- Fichas informativas -->
+        <div class="invest-cards">
+          <div class="invest-card">
+            <h3 class="font-rounded">Prevenció de problemes dentals</h3>
+            <div class="invest-card__icon">
+              <img src="img/icons/028-inspection.svg" alt="icona inspeccio" />
+            </div>
+            <p>
+              Les revisions periòdiques ajuden a detectar i prevenir càries, malalties de les genives i altres afeccions bucals.
+            </p>
+          </div>
+
+          <div class="invest-card">
+            <h3 class="font-rounded">Manteniment de la salut bucodental</h3>
+            <div class="invest-card__icon">
+              <img src="img/icons/001-doctor.svg" alt="icona doctor" />
+            </div>
+            <p>
+              Uns bons hàbits d'higiene oral i les visites regulars al dentista mantenen les dents i genives en perfecte estat.
+            </p>
+          </div>
+
+          <div class="invest-card">
+            <h3 class="font-rounded">Millora de la salut general</h3>
+            <div class="invest-card__icon">
+              <img src="img/icons/006-protection.svg" alt="icona proteccio" />
+            </div>
+            <p>
+              La salut oral està directament relacionada amb la salut del cos. Cuidar la boca és cuidar de tot tu.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <!-- 🔹 FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-text">
+          <h2 class="font-rounded">Clínica Dental Ribas</h2>
+          <p>Emplenant Girona de somriures des de 1983</p>
+        </div>
+
+        <div class="footer-links">
+          <a href="tractaments.html">Tractaments</a>
+          <a href="equip.html">Equip</a>
+          <a href="instal·lacions.html">Instal·lacions</a>
+          <a href="mútues.html">Mútues</a>
+          <a href="contacte.html">Contacte</a>
+        </div>
+
+        <div class="footer-copy">
+          <p>© 2025 Clínica Dental Ribas · Tots els drets reservats</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CTA flotante: teléfono + WhatsApp -->
+    <div class="floating-cta" aria-label="Contacte ràpid">
+      <a href="tel:+34972213241" class="cta-btn cta-phone">📞 972 21 32 41</a>
+      <a href="https://wa.me/34639415461" class="cta-btn cta-wa" target="_blank" rel="noopener">💬 WhatsApp</a>
+    </div>
+
+    <script>
+    const cta = document.querySelector('.floating-cta');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        cta.classList.add('visible');
+      } else {
+        cta.classList.remove('visible');
+      }
+    });
+  </script>
 
 </body>
 </html>
