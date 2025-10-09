@@ -141,3 +141,169 @@
   font-size: .95rem;
   line-height: 1.55;
 }
+
+/* ------------------------------
+   PÀGINA: NOSALTRES
+   ------------------------------ */
+
+/* 🔹 Hero */
+.page-nosaltres .hero {
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  min-height: 70vh;
+}
+
+.page-nosaltres .hero-text {
+  max-width: 900px;
+}
+
+.page-nosaltres .hero-text h1 {
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  font-family: "Nunito", "Arial Rounded MT Bold", sans-serif;
+  color: var(--text-dark);
+  margin-bottom: 1.2rem;
+}
+
+.page-nosaltres .hero-text h2 {
+  font-size: 1.15rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-dark);
+  max-width: 75ch;
+  margin: 0 auto;
+}
+
+/* 🔹 Ajuste visual de la imagen del hero (Nosaltres) */
+.page-nosaltres .hero-image {
+  flex: 0 1 42%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 1rem; /* empuja un poco hacia el borde derecho */
+  position: relative;
+}
+
+.page-nosaltres .hero-image img {
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  border-radius: 1.5rem;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  object-fit: cover;
+  opacity: 0.85; /* 🔹 leve transparencia */
+  filter: brightness(1.05) saturate(0.95) blur(0.4px); /* 🔹 más suave y difuminada */
+  transition: all 0.3s ease;
+}
+
+/* Efecto sutil al pasar el ratón (recupera nitidez) */
+.page-nosaltres .hero-image img:hover {
+  opacity: 1;
+  filter: brightness(1.05) saturate(1) blur(0);
+}
+
+/* 🔹 Bloc 2: Per què triar-nos */
+
+/* 🔹 Forzar alineación izquierda del bloque “Per què triar-nos” */
+.page-nosaltres .invest {
+  background: #fff;
+  padding: clamp(4rem, 7vw, 6rem) 0; /* sin margen lateral */
+}
+
+.page-nosaltres .invest-content{
+  text-align: left;
+}
+
+.page-nosaltres .invest-text{
+  max-width: 850px;           /* opcional, para lectura cómoda */
+  margin: 0 0 2rem 0;         /* 🔹 quita el auto-centering */
+  text-align: left;
+}
+
+.page-nosaltres .invest-text h2{
+  font-size: clamp(2.2rem, 3vw, 2.8rem);
+  margin-bottom: 1rem;
+}
+
+.page-nosaltres .invest-text h3 {
+  font-size: 1.2rem;
+  line-height: 1.65;
+  color: var(--text-dark);
+  opacity: 0.9;
+  max-width: none;   /* ✅ elimina la restricción de ancho */
+  width: 100%;       /* usa todo el espacio disponible */
+  text-align: left;
+}
+
+
+.page-nosaltres .invest-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.page-nosaltres .invest-card {
+  background: linear-gradient(180deg, #f9fffc 0%, #ebfff5 100%);
+  border: 1px solid #e3f5eb;
+}
+
+.page-nosaltres .invest-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+}
+
+/* 🔹 Bloc 3: Tractaments */
+.page-nosaltres .experience {
+  background-color: #ffffff;
+  padding: clamp(4rem, 8vw, 6rem) 1rem;
+}
+
+.page-nosaltres .exp-header {
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* 🔹 Blocs de detall dels tractaments */
+.page-nosaltres .section {
+  padding: clamp(4rem, 8vw, 6rem) 1.5rem;
+  background-color: #ffffff;
+  border-top: 1px solid #eef2f7;
+}
+
+.page-nosaltres .section:nth-of-type(even) {
+  background: linear-gradient(180deg, #f8fffa 0%, #ffffff 100%);
+}
+
+.page-nosaltres .section .container {
+  width: min(950px, 90%);
+  margin: 0 auto;
+  text-align: left;
+}
+
+.page-nosaltres .section h2 {
+  font-size: clamp(1.6rem, 2.2vw, 2rem);
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.page-nosaltres .section h3 {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.page-nosaltres .section ul {
+  margin-top: 1rem;
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+.page-nosaltres .section ul li {
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+

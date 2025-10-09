@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet">
+  <title>Nosaltres · Clínica Dental Ribas</title>
+
+  <!-- Estils globals -->
+  <link rel="stylesheet" href="styles/reset.css" />
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="styles/pages.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/webp" sizes="32x32" href="img/favicon.webp">
+  <link rel="icon" type="image/webp" sizes="16x16" href="img/favicon.webp">
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon.webp">
+  <meta name="theme-color" content="#00c2ff">
+</head>
+
+<body class="page-nosaltres">
+  <!-- 🔹 NAVBAR -->
+  <header>
+    <nav class="navbar">
+      <!-- Logo -->
+      <a href="index.html" class="logo">
+        <img src="img/logo-clinica-ribas.webp" alt="Clínica Dental Ribas Logo" />
+      </a>
+
+      <!-- Botó menú mòbil -->
+      <button class="menu-toggle" aria-label="Obrir menú">
+        <span class="hamburger"></span>
+      </button>
+
+      <!-- Menú principal -->
+      <ul class="nav-links">
+        <li><a href="tractaments.html">Tractaments</a></li>
+        <li><a href="equip.html">Equip</a></li>
+        <li><a class="active" href="nosaltres.html">Nosaltres</a></li>
+        <li><a href="mútues.html">Mútues</a></li>
+        <li><a href="contacte.html">Contacte</a></li>
+      </ul>
+
+      <!-- Info de contacte -->
+      <div class="contact-info">
+        <a href="tel:+34972213241" class="phone">Tlf. 972 21 32 41</a>
+        <a href="https://wa.me/34639415461" target="_blank" class="whatsapp">WhatsApp. 639 41 54 61</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 🔹 HERO -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-text">
+            <h1>Compromesos amb la salut dental a Girona</h1>
+            <h2>Les nostres instal·lacions combinen tecnologia d'última generació amb espais còmodes i segurs. Cada detall està pensat per garantir la millor atenció dental, en un entorn modern i acollidor on et sentiràs en bones mans.</h2>
+            </div>
+
+            <div class="hero-image">
+            <img src="img/foto-clinica-home.webp" alt="Instal·lacions Clínica Dental Ribas" />
+            </div>
+        </div>
+    </section>
+
+    <!-- 🔹 BLOC 2 · Per què triar-nos (reutilitza el mòdul .invest i les .invest-card) -->
+    <section class="invest">
+      <div class="invest-content">
+        <div class="invest-text">
+          <h2 class="font-rounded">Per què triar la Clínica Dental Ribas?</h2>
+          <h3>Més de quatre dècades cuidant els somriures de Girona amb un servei proper, honest i basat en la
+            confiança. A la Clínica Ribas combinem experiència, tecnologia i un equip de professionals dedicats a
+            oferir-te la millor atenció.</h3>
+        </div>
+
+        <div class="invest-cards">
+          <div class="invest-card">
+            <h3 class="font-rounded">Experiència i trajectòria</h3>
+            <h4>Des de 1983 al cor de Girona.</h4>
+          </div>
+
+          <div class="invest-card">
+            <h3 class="font-rounded">Equip multidisciplinari</h3>
+            <h4>Especialistes en totes les àrees dentals.</h4>
+          </div>
+
+          <div class="invest-card">
+            <h3 class="font-rounded">Tecnologia avançada</h3>
+            <h4>Diagnòstics precisos i tractaments mínimament invasius.</h4>
+          </div>
+
+          <div class="invest-card">
+            <h3 class="font-rounded">Tracte proper i personalitzat</h3>
+            <h4>Ens adaptem a cada pacient.</h4>
+          </div>
+
+          <div class="invest-card">
+            <h3 class="font-rounded">Qualitat i seguretat</h3>
+            <h4>Compromís en cada visita.</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🔹 BLOC 3 · Tractaments (mateix disseny de targetes que a l’index) -->
+    <section class="experience section" id="tractaments">
+      <div class="container exp-header">
+        <div class="exp-header__titles">
+          <h2 class="font-rounded">Tractaments</h2>
+          <h3>Cuidem cada detall perquè cada tractament sigui una experiència còmoda, segura i de confiança.</h3>
+        </div>
+      </div>
+
+      <!-- Grid de targetes exactament com a l’index.html -->
+      <div class="container exp-grid">
+        <!-- Endodòncia -->
+        <a href="#endodoncia" class="exp-card">
+          <div class="exp-card__icon" aria-hidden="true">
+            <img src="img/icons/030-root canal.svg" alt="icona endodoncia" />
+          </div>
+          <h3 class="font-rounded">Endodòncia</h3>
+        </a>
+
+        <!-- Exodòncia -->
+        <a href="#exodoncia" class="exp-card">
+          <div class="exp-card__icon" aria-hidden="true">
+            <img src="img/icons/019-extraction.svg" alt="icona exodoncia" />
+          </div>
+          <h3 class="font-rounded">Exodòncia</h3>
+        </a>
+
+        <!-- Ortodòncia -->
+        <a href="#ortodoncia" class="exp-card">
+          <div class="exp-card__icon" aria-hidden="true">
+            <img src="img/icons/010-braces.svg" alt="icona ortodoncia" />
+          </div>
+          <h3 class="font-rounded">Ortodòncia</h3>
+        </a>
+
+        <!-- Blanqueig -->
+        <a href="#blanqueig" class="exp-card">
+          <div class="exp-card__icon" aria-hidden="true">
+            <img src="img/icons/008-tooth.svg" alt="icona blanqueig" />
+          </div>
+          <h3 class="font-rounded">Blanqueig</h3>
+        </a>
+      </div>
+    </section>
+
+    <!-- 🔹 Detall de tractaments (ancorat a les targetes) -->
+    <section class="section" id="exodoncia">
+      <div class="container">
+        <h2 class="font-rounded">Exodòncia</h2>
+        <h3>Extracció dental segura i indolora de peces danyades o no viables.</h3>
+        <ul style="margin-top:1rem; line-height:1.6;">
+          <li><strong>Aplicació d’anestèsia local</strong> per garantir el màxim confort.</li>
+          <li><strong>Procediment ràpid i controlat</strong> per evitar complicacions.</li>
+          <li><strong>Recuperació òptima</strong> gràcies a l’experiència del nostre equip quirúrgic.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="ortodoncia">
+      <div class="container">
+        <h2 class="font-rounded">Ortodòncia i ortodòncia invisible</h2>
+        <h3>Correcció de la posició dental amb ortodòncia tradicional o invisible (Invisalign®) per aconseguir
+          una mossegada sana i un somriure alineat.</h3>
+        <ul style="margin-top:1rem; line-height:1.6;">
+          <li><strong>Tractaments personalitzats</strong> amb tècniques tradicionals o invisibles.</li>
+          <li><strong>Millora funcional i estètica</strong> de les dents i la mandíbula.</li>
+          <li><strong>Opcions discretes</strong> com Invisalign® per a més comoditat i estètica.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="blanqueig">
+      <div class="container">
+        <h2 class="font-rounded">Blanqueig dental</h2>
+        <h3>Blanquejament dental professional a Girona per millorar l’estètica del teu somriure amb resultats
+          visibles i segurs.</h3>
+        <ul style="margin-top:1rem; line-height:1.6;">
+          <li><strong>Eliminació de taques</strong> internes i externes de l’esmalt dental.</li>
+          <li><strong>Resultats visibles</strong> des de la primera sessió.</li>
+          <li><strong>Tractaments professionals</strong> a la clínica o amb seguiment.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="endodoncia">
+      <div class="container">
+        <h2 class="font-rounded">Endodòncia</h2>
+        <h3>Tractament de conductes per eliminar la infecció interna de la dent i conservar la peça natural
+          sense dolor.</h3>
+        <ul style="margin-top:1rem; line-height:1.6;">
+          <li><strong>Elimina la infecció</strong> i preserva la dent natural.</li>
+          <li><strong>Alleuja el dolor</strong> i evita complicacions futures.</li>
+          <li><strong>Precisió i biocompatibilitat</strong> amb tecnologia i materials d’última generació.</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 🔹 FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-text">
+          <h2 class="font-rounded">Clínica Dental Ribas</h2>
+          <p>Somriures sans i naturals des de 1983</p>
+        </div>
+
+        <div class="footer-links">
+          <a href="tractaments.html">Tractaments</a>
+          <a href="equip.html">Equip</a>
+          <a href="nosaltres.html">Nosaltres</a>
+          <a href="mútues.html">Mútues</a>
+          <a href="contacte.html">Contacte</a>
+        </div>
+
+        <div class="footer-legal">
+          <a href="avis-legal.html">Avís legal</a>
+          <span>·</span>
+          <a href="politica-privacitat.html">Política de privacitat</a>
+        </div>
+
+        <div class="footer-copy">
+          <p>© 2025 Clínica Dental Ribas · Tots els drets reservats</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CTA flotant telèfon + WhatsApp -->
+  <div class="floating-cta" aria-label="Contacte ràpid">
+    <a href="tel:+34972213241" class="cta-btn cta-phone">📞 972 21 32 41</a>
+    <a href="https://wa.me/34639415461" class="cta-btn cta-wa" target="_blank" rel="noopener">💬 WhatsApp</a>
+  </div>
+
+  <script>
+    // Mostrar/ocultar CTA flotant segons scroll
+    const cta = document.querySelector('.floating-cta');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        cta.classList.add('visible');
+      } else {
+        cta.classList.remove('visible');
+      }
+    });
+  </script>
+</body>
+</html>
