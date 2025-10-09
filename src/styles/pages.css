@@ -1,0 +1,143 @@
+/* =========================================================
+   pages.css — Estilos específicos por página
+   Página: EQUIP
+   Scope: .page-equip
+   Requiere: reset.css + style.css cargados antes
+   ========================================================= */
+
+/* Fallback por si no existen variables globales */
+:root{
+  --equip-accent: var(--primary, #00b6bd);
+  --equip-text: var(--text-dark, #1f2937);
+  --equip-muted: #6b7280;
+  --equip-card-bg: #ffffff;
+  --equip-card-shadow: 0 10px 25px rgba(0,0,0,.06);
+  --equip-radius: 20px;
+}
+
+/* =========================================================
+   EQUIP — estilo tipo "Our Staff"
+   ========================================================= */
+
+/* ---------- HERO banda verde ---------- */
+.page-equip .hero {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  min-height: 35vh !important;
+  padding: 2.5rem 1rem !important;
+}
+
+/* Elimina el espacio reservado para la imagen de la home */
+.page-equip .hero-container {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 auto !important;
+  background: linear-gradient(180deg, #e8fff3 0%, #f6fefa 100%) !important;
+}
+
+/* Asegura que no queda hueco de la antigua imagen */
+.page-equip .hero img,
+.page-equip .hero-image,
+.page-equip .hero-container::before {
+  display: none !important;
+}
+
+.page-equip .hero-text--equip{
+  font-family: "Nunito", "Arial Rounded MT Bold", sans-serif;
+  font-size: 3rem;
+  color: #002b5c;
+  text-align: center;
+}
+
+/* ---------- GRID staff ---------- */
+.page-equip .staff{
+  padding: clamp(2rem, 5vw, 3.5rem) 0 4rem;
+  background: #fff;
+}
+
+.page-equip .staff .container{
+  width: min(1200px, 92%);
+  margin: 0 auto;
+}
+
+.page-equip .staff-grid{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+/* Card */
+.page-equip .staff-card{
+  grid-column: span 4; /* 3 por fila desktop */
+  background: #ffffff;
+  border: 1px solid #eef2f7;
+  border-radius: 18px;
+  padding: 1.25rem;
+  text-align: center;
+  transition: transform .2s ease, box-shadow .2s ease;
+  box-shadow: 0 6px 20px rgba(0,0,0,.04);
+  background: radial-gradient(circle at center, #ffffff 0%, #f6fefa 60%, #e8fff3 100%);
+}
+
+.page-equip .staff-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,.07);
+}
+
+/* ---------- Fotos del equipo (más grandes y con mejor presencia) ---------- */
+.page-equip .staff-photo{
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 1.25rem;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,.10);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.page-equip .staff-photo img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform .3s ease;
+}
+
+/* efecto sutil al pasar el ratón */
+.page-equip .staff-card:hover .staff-photo{
+  transform: scale(1.05);
+  box-shadow: 0 12px 28px rgba(0,0,0,.15);
+}
+
+.page-equip .staff-card:hover .staff-photo img{
+  transform: scale(1.07);
+}
+
+/* Tipos */
+.page-equip .staff-name{
+  font-family: "Nunito","Arial Rounded MT Bold",system-ui,sans-serif;
+  font-weight: 900;
+  color: var(--text-dark);
+  font-size: 1.1rem;
+  margin-bottom: .25rem;
+}
+
+.page-equip .staff-role{
+  color: #059669; /* verde sutil para la especialidad */
+  font-weight: 700;
+  font-size: .95rem;
+  margin-bottom: .35rem;
+}
+
+.page-equip .staff-detail{
+  color: #4b5563;
+  font-size: .95rem;
+  line-height: 1.55;
+}
