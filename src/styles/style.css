@@ -178,10 +178,12 @@ header.is-stuck { box-shadow: 0 6px 18px rgba(15,23,42,.06); }
   margin-bottom: 1rem;
 }
 
-.hero-text p {
-  font-size: 1.25rem;
-  color: #444;
-  margin-bottom: 2rem;
+.hero-text h2 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  max-width: 600px; /* 🔹 ancho controlado */
+  line-height: 1.5;
 }
 
 /* ---------- Botones del Hero ---------- */
@@ -189,6 +191,7 @@ header.is-stuck { box-shadow: 0 6px 18px rgba(15,23,42,.06); }
 .hero-buttons {
   display: flex;
   gap: 1.5rem;
+  margin-top: 2.5rem;
 }
 
 .btn-primary,
@@ -283,17 +286,31 @@ header.is-stuck { box-shadow: 0 6px 18px rgba(15,23,42,.06); }
 }
 
 /* Encabezado */
-.exp-header{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:1rem;
-  margin-bottom:1.5rem;
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
-.exp-header h2{
+.exp-header__titles {
+  display: flex;
+  flex-direction: column; /* 🔹 coloca h2 y h3 en columna */
+  gap: 0.4rem;
+}
+
+.exp-header h2 {
   font-size: clamp(1.6rem, 2.5vw, 2.2rem);
   color: var(--text-dark);
+}
+
+.exp-header h3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  max-width: 600px; /* 🔹 ancho controlado */
+  line-height: 1.5;
 }
 
 /* Botón “veure més” */
@@ -386,7 +403,8 @@ header.is-stuck { box-shadow: 0 6px 18px rgba(15,23,42,.06); }
 }
 
 
-/* ------- SECCIÓN CLÍNICA ------- */
+/* ------- SECCIÓN EQUIP ------- */
+
 /* --- Contenedor externo para centrar como el hero principal --- */
 .clinica-wrap{
   display:flex;
@@ -411,9 +429,9 @@ header.is-stuck { box-shadow: 0 6px 18px rgba(15,23,42,.06); }
   background-size: cover;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 35% 45%;  
-  aspect-ratio: 18 / 9;           
-  min-height: 320px; 
+  background-position: 35% 38%;  
+  aspect-ratio: 18 / 7;           
+  min-height: 260px; 
 }
 
 /* Difuminado verde idéntico al del hero principal */
@@ -441,29 +459,47 @@ header.is-stuck { box-shadow: 0 6px 18px rgba(15,23,42,.06); }
   position: relative;
   z-index: 1;
   height: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
-  padding: 2rem 4rem .5rem;   /* mismo aire que el hero */
+  display: grid;
+  grid-template-columns: 1fr minmax(520px,760px) 1fr; /* aire - centre - aire */
+  grid-template-rows: auto auto;                      /* fila 1: text, fila 2: botó */
+  justify-items: center;
+  align-items: start;
+  gap: .6rem;
+  padding: 1rem 4rem 1.5rem;
 }
 
 /* Texto */
 .clinica-card__text{
-  max-width: 55%;
-  color: var(--text-dark);
-   transform: translateY(-14px);
+  padding-top: 40px;
+  grid-column: 2;
+  grid-row: 1;               
+  text-align: center;
+  max-width: none;
+  transform: none;
 }
+
 .clinica-card__text h2{
   font-size: 2.6rem;
-  margin-bottom: 1rem;
+  margin-bottom: .75rem;
   font-family: "Nunito",'Arial Rounded MT Bold', sans-serif;
   color: var(--text-dark);
 }
-.clinica-card__text p{
+
+.clinica-card__text h3{
   font-size: 1.1rem;
-  line-height: 1.6;
+  font-weight: 500;
   color: var(--text-dark);
+  max-width: 72ch;             /* ancho legible */
+  line-height: 1.5;
+  margin: 0 auto;              /* centra el bloque */
+}
+
+.clinica-card__content .btn-primary{
+  grid-column: 2;
+  grid-row: 2;               /* <- assegura que va a la fila 2 */
+  justify-self: center;
+  margin-top: .5rem;
+  position: static !important; /* per si algun estil global l’havia posat absolute */
 }
 
 /* Botón (usa tu .btn-primary existente; por si acaso aquí un refuerzo) */
@@ -497,10 +533,12 @@ header.is-stuck { box-shadow: 0 6px 18px rgba(15,23,42,.06); }
   margin-bottom: 1rem;
 }
 
-.invest-text p {
+.invest-text h3 {
   font-size: 1.1rem;
+  font-weight: 500;
   color: var(--text-dark);
   margin-bottom: 2rem;
+  line-height: 1.5;
 }
 
 /* Fichas */
@@ -545,7 +583,7 @@ header.is-stuck { box-shadow: 0 6px 18px rgba(15,23,42,.06); }
 
 .invest-card__icon {
   position: absolute;
-  bottom: 1.5rem;          /* icono al final de la tarjeta */
+  bottom: 3rem;          /* icono al final de la tarjeta */
   left: 50%;
   transform: translateX(-50%); /* centrado horizontalmente */
   display: flex;
@@ -569,22 +607,46 @@ header.is-stuck { box-shadow: 0 6px 18px rgba(15,23,42,.06); }
   opacity: 4;
 }
 
-.invest-card p {
+.invest-card h4 {
   color: var(--text-dark);
   opacity: 0.85;
-  font-size: 1rem;
   line-height: 1.6;
   margin-top: 0.5rem;
   z-index: 1;
   position: relative;
+  font-size: 1.1rem;
+  font-weight: 500;
 }
+
+.invest-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+.invest-btn .btn-primary {
+  padding: 1rem 2.2rem;
+  font-weight: 600;
+  border: 2px solid #097C3F;
+  color: #097C3F;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.invest-btn .btn-primary:hover {
+  background-color: #097C3F;
+  color: white;
+  box-shadow: 0 4px 10px rgba(9,124,63,0.25);
+}
+
 
 /* ------- FOOTER ------- */
 .footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 4rem 0;
+  padding-bottom: 4rem;
   background-color: #fff;
 }
 
@@ -656,6 +718,28 @@ header.is-stuck { box-shadow: 0 6px 18px rgba(15,23,42,.06); }
   font-size: 0.9rem;
   opacity: 0.7;
   color: var(--text-dark);
+}
+
+/* ------- Enlaces legales en el footer ------- */
+.footer-legal {
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.footer-legal a {
+  color: #097C3F;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-legal a:hover {
+  color: #05582d;
+}
+
+.footer-legal span {
+  margin: 0 0.5rem;
+  color: rgba(0,0,0,0.4);
 }
 
 
