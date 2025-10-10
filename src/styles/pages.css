@@ -368,6 +368,225 @@
   opacity: 4 !important;
 }
 
+/* ===========================
+   🔹 PÀGINA MÚTUES
+=========================== */
+
+.page-mutues .hero-text {
+  text-align: center !important;
+  margin: 0 auto !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------- BLOC 2: Mútues i asseguradores ---------- */
+
+.page-mutues #mutues {
+  background: #ffffff;
+}
+
+/* 🔹 GRID DE MÚTUES (3 columnas × 2 filas) */
+.page-mutues .mutues-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(280px, 320px)); /* 3 columnas “estrechas” */
+  column-gap: 1rem;      /* menos espacio horizontal */
+  row-gap: 1.2rem;       /* menos espacio vertical */
+  justify-content: center;
+  justify-items: center;
+  align-items: stretch;
+  list-style: none;
+
+  /* clave para que las columnas laterales se acerquen al centro */
+  width: min(1050px, 94%);
+  margin: 4rem auto 0;
+}
+
+/* ---------- Tarjetas de mútues (fondo blanco + sombra verdosa) ---------- */
+.page-mutues .mutua-card {
+  background: #ffffff; /* fondo blanco limpio */
+  border: 1px solid #e8f5ee; /* borde verde muy sutil */
+  border-radius: 18px;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  transition: transform .2s ease, box-shadow .2s ease;
+  /* sombra con tinte verdoso (más cálido que gris) */
+  box-shadow: 0 8px 22px rgba(9, 124, 63, 0.12);
+  width: 90%;
+  max-width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-mutues .mutua-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,.07);
+}
+
+/* 🔹 Imágenes uniformes */
+.page-mutues .mutua-card img {
+  width: 120px;
+  height: 70px;
+  object-fit: contain;
+  background-color: #fff;
+  border-radius: 8px;
+  margin-bottom: .75rem;
+  padding: .4rem;
+  filter: grayscale(0.1);
+  transition: filter .2s ease;
+}
+
+.page-mutues .mutua-card:hover img {
+  filter: grayscale(0);
+}
+
+
+/* ---------- BLOC 3: Consulta cobertures ---------- */
+.page-mutues #consulta-cobertures {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 1rem;
+  background: linear-gradient(180deg, #e8fff3 0%, #f6fefa 100%);
+  border-radius: 2.5rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, .04);
+  width: 90%;
+  max-width: 1200px;
+  margin: 6rem auto 4rem; /* separa de las fichas de arriba y del footer */
+}
+
+.page-mutues #consulta-cobertures .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.page-mutues #consulta-cobertures h2 {
+  font-family: "Nunito", "Arial Rounded MT Bold", sans-serif;
+  font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.page-mutues #consulta-cobertures p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-dark);
+  max-width: 72ch;
+  margin: 0 auto 2rem;
+  opacity: 0.9;
+}
+
+.page-mutues #consulta-cobertures .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.8rem;
+  border: 2px solid #097C3F;
+  border-radius: 50px;
+  color: #097C3F;
+  background-color: transparent;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.page-mutues #consulta-cobertures .btn-primary:hover {
+  background-color: #097C3F;
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(9, 124, 63, 0.22); /* sombra verde suave */
+}
+
+
+/* ---------- BLOC 4: FAQs (actualizado con sombra verde + icono) ---------- */
+
+.page-mutues .faq {
+  background: #ffffff;
+  padding: 3rem 1rem 4rem;
+}
+
+.page-mutues .faq h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--text-dark);
+}
+
+/* Recuadro con sombra verdosa */
+.page-mutues .faq-item {
+  border: 1px solid #e8f5ee;
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.2rem;
+  background: #ffffff;
+  box-shadow: 0 6px 18px rgba(9, 124, 63, 0.1); /* sombra verde suave */
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.page-mutues .faq-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(9, 124, 63, 0.15);
+}
+
+/* Summary con icono + alineado a la derecha */
+.page-mutues .faq-item summary {
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--text-dark);
+  position: relative;
+  list-style: none;
+  padding-right: 2rem; /* espacio para el icono */
+}
+
+/* Elimina el marcador por defecto */
+.page-mutues .faq-item summary::marker {
+  display: none;
+}
+
+/* Icono "+" a la derecha */
+.page-mutues .faq-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 0.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.4rem;
+  color: #097C3F; /* verde corporativo */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Cuando el FAQ está abierto, cambia a "–" */
+.page-mutues .faq-item[open] summary::after {
+  content: "–";
+  color: #0a5230;
+  transform: translateY(-50%) rotate(180deg);
+}
+
+/* Texto desplegado */
+.page-mutues .faq-item p {
+  margin-top: .75rem;
+  line-height: 1.6;
+  color: var(--text-dark);
+  font-size: .95rem;
+  transition: opacity .3s ease;
+}
+
+
+/* Animació d’obertura */
+.page-mutues .faq-item[open] p {
+  animation: fadeIn .3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
 
 
 

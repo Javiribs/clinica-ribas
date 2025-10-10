@@ -1,0 +1,220 @@
+/* ===== Pàgina: Tractaments ===== */
+
+/* HERO */
+
+.page-tractaments .hero-text{
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+  padding: 0 2rem !important;   /* aire lateral */
+  text-align: center !important;
+}
+
+/* Banda verde idéntica a EQUIP */
+.page-tractaments .hero-container {
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width:100% !important;
+  padding:0 !important;
+  margin:0 auto !important;
+
+  /* MISMO COLOR + prioridad */
+  background: linear-gradient(180deg, #e8fff3 0%, #f6fefa 100%) !important;
+
+  /* misma “pastilla” que usamos en el resto */
+  border-radius: 2.5rem !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 1.25rem !important;
+}
+
+/* Quita cualquier capa previa que tiña el fondo */
+.page-tractaments .hero-container::before { content:none !important; }
+
+/* Texto del hero: igualamos jerarquías de EQUIP */
+.page-tractaments .hero-text { max-width: 1100px; margin: 0 auto; }
+
+.page-tractaments .hero-text h1{
+  font-family:"Nunito","Arial Rounded MT Bold",sans-serif !important;
+  font-weight: 800 !important;
+  font-size: clamp(2rem, 4vw, 3.2rem) !important;
+  color: var(--text-dark) !important;
+  margin-bottom: .75rem !important;
+}
+
+.page-tractaments .hero-text h2{
+  font-size: clamp(1rem, 1.6vw, 1.2rem) !important;
+  font-weight: 700 !important;
+  line-height: 1.6 !important;
+  color: var(--text-dark) !important;
+  margin-bottom: .4rem !important;
+}
+
+.page-tractaments .hero-text h3{
+  font-size: clamp(.95rem, 1.4vw, 1.05rem) !important;
+  font-weight: 500 !important;
+  line-height: 1.6 !important;
+  color: var(--text-dark) !important;
+  opacity: .9 !important;
+}
+
+/* --- Iconos laterales: más cerca del texto y desordenados --- */
+.page-tractaments .hero-icons{ position:absolute; inset:0; z-index:1; pointer-events:none; overflow: hidden; }
+
+.page-tractaments .hero-icon{
+  position:absolute;
+  width: clamp(34px, 4.8vw, 58px);
+  max-width: 48px;
+  opacity:.12;
+  filter: brightness(0) saturate(100%) invert(30%) sepia(60%) saturate(400%) hue-rotate(100deg) brightness(100%) contrast(90%);
+  will-change: transform;
+}
+
+/* Izquierda (6 iconos) — más cerca del texto (10–16% desde el borde) */
+.page-tractaments .icon-1  { top: 6%;  left: 11%; transform: rotate(-6deg) scale(.95); }
+.page-tractaments .icon-3  { top: 22%; left: 14%; transform: rotate(7deg)  scale(.9);  opacity:.1; }
+.page-tractaments .icon-5  { top: 38%; left: 10%; transform: rotate(-3deg)           ; }
+.page-tractaments .icon-7  { top: 57%; left: 16%; transform: rotate(5deg)  scale(.85); opacity:.1; }
+.page-tractaments .icon-9  { top: 72%; left: 12%; transform: rotate(-8deg) scale(.92); }
+.page-tractaments .icon-11 { top: 86%; left: 15%; transform: rotate(4deg)  scale(.88); opacity:.1; }
+
+/* Derecha (6 iconos) — más cerca del texto (10–16% desde el borde) */
+.page-tractaments .icon-2  { top: 9%;  right: 12%; transform: rotate(5deg)  scale(.96); }
+.page-tractaments .icon-4  { top: 28%; right: 15%; transform: rotate(-4deg) scale(.9);  opacity:.1; }
+.page-tractaments .icon-6  { top: 44%; right: 10%; transform: rotate(6deg); }
+.page-tractaments .icon-8  { top: 60%; right: 14%; transform: rotate(-7deg) scale(.9);  opacity:.1; }
+.page-tractaments .icon-10 { top: 75%; right: 11%; transform: rotate(3deg)  scale(.92); }
+.page-tractaments .icon-12 { top: 88%; right: 16%; transform: rotate(-5deg) scale(.86); opacity:.1; }
+
+/* Mantén ocultos los muy centrales/duplicados si no los necesitas */
+.page-tractaments .icon-13,
+.page-tractaments .icon-14,
+.page-tractaments .icon-16 { display:none; }
+
+
+/* INTRO */
+.page-tractaments .intro {
+  padding: clamp(2rem, 6vw, 3.2rem) 0;
+  background: #fff;
+}
+
+.page-tractaments .intro .container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+.page-tractaments .intro p {
+  font-family: "Nunito", "Arial Rounded MT Bold", sans-serif;
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  line-height: 1.7;
+  color: var(--text-dark);
+  font-weight: 500;
+  text-align: left;
+  margin: 0;
+  max-width: none;
+}
+
+
+/* GRID TARGETES (reutilitza patrons d’Experiència) */
+.page-tractaments .experience.section{ background:#fff; padding: 3.2rem 0 4rem; }
+.page-tractaments .exp-header__titles h2{ margin-bottom: .25rem; }
+.page-tractaments .exp-grid{ width: min(1100px, 92%); margin-inline: auto; }
+
+/* --- Ajuste posición del icono en las tarjetas --- */
+.page-tractaments .exp-card__icon {
+  position: absolute;
+  bottom: 0.1rem;   /* 👈 lo situamos en la parte inferior */
+  left: 1rem;     /* 👈 y pegado al borde izquierdo */
+  transform: none;  /* eliminamos el centrado anterior */
+  opacity: 0.25;
+  z-index: 0;
+}
+
+.page-tractaments .exp-card__icon img {
+  width: 40px;      
+  height: auto;
+}
+
+/* ---------- FAQ (actualizado con sombra verde e icono + / –) ---------- */
+.faq {
+  background: #ffffff;
+  padding: 3.2rem 0 5rem;
+}
+
+.faq .container {
+  width: min(900px, 92%);
+  margin: 0 auto;
+}
+
+.faq h2 {
+  font-size: clamp(2rem, 2.5vw, 2.2rem);
+  color: var(--text-dark);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Recuadro con sombra verdosa */
+.faq-item {
+  border: 1px solid #e8f5ee;
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.2rem;
+  background: #ffffff;
+  box-shadow: 0 6px 18px rgba(9, 124, 63, 0.1); /* sombra verde suave */
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.faq-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(9, 124, 63, 0.15);
+}
+
+/* Summary con icono de + / – */
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  font-weight: 800;
+  color: var(--text-dark);
+  font-family: "Nunito", "Arial Rounded MT Bold", sans-serif;
+  position: relative;
+  padding-right: 2rem; /* espacio para el icono */
+}
+
+/* Elimina el marcador por defecto */
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Icono "+" a la derecha */
+.faq-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 0.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.4rem;
+  color: #097C3F; /* verde corporativo */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Cambia a "–" al abrir */
+.faq-item[open] summary::after {
+  content: "–";
+  color: #0a5230;
+  transform: translateY(-50%) rotate(180deg);
+}
+
+/* Texto */
+.faq-item p {
+  margin-top: 0.75rem;
+  color: #0c2440;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  transition: opacity 0.3s ease;
+}
+
+
+/* CTA flotant: es mostra en scroll (classes ja definides al projecte) */
+/* .floating-cta.visible { opacity:1; transform: translateY(0); }  — ja definit a style.css */

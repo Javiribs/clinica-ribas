@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tractaments · Clínica Dental Ribas</title>
+  <!-- Google Fonts (igual que en index/equip) -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet">
+
+
+  <!-- CSS global del projecte -->
+  <link rel="preload" href="styles/reset.css" as="style" />
+  <link rel="preload" href="styles/style.css" as="style" />
+  <link rel="preload" href="styles/pages.css" as="style" />
+  <link rel="stylesheet" href="styles/reset.css" />
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="styles/pages.css" />
+  <!-- CSS específic de la pàgina -->
+  <link rel="stylesheet" href="styles/tractaments.css" />
+
+  <link rel="icon" type="image/webp" href="img/favicon.webp" />
+</head>
+
+<body class="page-tractaments">
+  <!-- 🔹 NAVBAR -->
+  <header>
+    <nav class="navbar">
+      <!-- Logo -->
+      <a href="index.html" class="logo">
+        <img src="img/logo-clinica-ribas.webp" alt="Clínica Dental Ribas" />
+      </a>
+
+      <!-- Menú mòbil -->
+      <button class="menu-toggle" aria-label="Obrir menú">
+        <span class="hamburger"></span>
+      </button>
+
+      <!-- Enllaços -->
+      <ul class="nav-links">
+        <li><a class="active" href="tractaments.html">Tractaments</a></li>
+        <li><a href="equip.html">Equip</a></li>
+        <li><a href="nosaltres.html">Nosaltres</a></li>
+        <li><a href="mutues.html">Mútues</a></li>
+        <li><a href="contacte.html">Contacte</a></li>
+      </ul>
+
+      <!-- Contacte curt -->
+      <div class="contact-info">
+        <a class="phone" href="tel:+34972213241">972 21 32 41</a>
+        <a class="whatsapp" href="https://wa.me/34639415461" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 🔹 HERO · difuminat verd + núvol d’icones -->
+    <section class="hero" id="hero-tractaments" aria-labelledby="hero-title">
+      <div class="hero-container">
+        <!-- Núvol d’icones decoratives -->
+        <div class="hero-icons" aria-hidden="true">
+          <img class="hero-icon icon-1" src="img/icons/001-doctor.svg" alt="icono doctor" />
+          <img class="hero-icon icon-2" src="img/icons/002-toothache.svg" alt="icono dolor muela" />
+          <img class="hero-icon icon-3" src="img/icons/003-mirror.svg" alt="icono espejo" />
+          <img class="hero-icon icon-4" src="img/icons/004-tooth pulp.svg" alt="icono pulpa" />
+          <img class="hero-icon icon-5" src="img/icons/005-mouthpiece.svg" alt="icono fèrula" />
+          <img class="hero-icon icon-6" src="img/icons/006-protection.svg" alt="icono proteccion" />
+          <img class="hero-icon icon-7" src="img/icons/007-dentures.svg" alt="icono dentadura" />
+          <img class="hero-icon icon-8" src="img/icons/008-tooth.svg" alt="icono diente" />
+          <img class="hero-icon icon-9" src="img/icons/009-scissors.svg" alt="icono tijeras" />
+          <img class="hero-icon icon-10" src="img/icons/010-braces.svg" alt="icono correa" />
+          <img class="hero-icon icon-11" src="img/icons/011-drill.svg" alt="icono torno" />
+          <img class="hero-icon icon-12" src="img/icons/012-fixing.svg" alt="icono fijación" />
+          <img class="hero-icon icon-13" src="img/icons/013-implant.svg" alt="icono implante" />
+          <img class="hero-icon icon-14" src="img/icons/014-clamp.svg" alt="icono clavija" />
+          <img class="hero-icon icon-16" src="img/icons/015-broken tooth.svg" alt="icono diente roto" />
+          <img class="hero-icon icon-16" src="img/icons/016-tooth drill.svg" alt="icono diente tornillo" />
+        </div>
+
+        <!-- Text del hero -->
+        <div class="hero-text">
+          <h1 id="hero-title" class="font-rounded">Tractaments dentals a Girona</h1>
+          <h2>Cuidem la teva salut bucodental amb tecnologia avançada i un equip d'especialistes.</h2>
+          <h3>Més de 40 anys d'experiència oferint tractaments dentals d'excel·lència a Girona.</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🔹 TEXT INTRODUCTORI fora del hero -->
+    <section class="intro" aria-labelledby="intro-title">
+      <div class="container">
+        <p>
+          A la Clínica Dental Ribas oferim una atenció integral per a totes les etapes i necessitats de la salut oral.
+          Comptem amb instal·lacions modernes, tecnologia d'avantguarda i un equip multidisciplinari especialitzat en
+          cada àrea de l'odontologia, per garantir els millors resultats amb el màxim confort.
+        </p>
+      </div>
+    </section>
+
+    <!-- 🔹 GRID TRACTAMENTS (mateix patró targetes Experiència) -->
+    <section class="experience section" id="tractaments">
+      <div class="container exp-header">
+        <div class="exp-header__titles">
+          <h2 class="font-rounded">Tractaments dentals que oferim</h2>
+        </div>
+      </div>
+
+      <div class="container exp-grid">
+        <!-- Endodòncia -->
+        <a href="endodoncia.html" class="exp-card">
+          <div class="exp-card__icon" aria-hidden="true">
+            <img src="img/icons/030-root canal.svg" alt="icona endodòncia" />
+          </div>
+          <h3 class="font-rounded">Endodòncia</h3>
+          <p>Tractament del nervi dental per conservar la dent i eliminar dolor.</p>
+        </a>
+
+        <!-- Exodòncia -->
+        <a href="exodoncia.html" class="exp-card">
+          <div class="exp-card__icon" aria-hidden="true">
+            <img src="img/icons/019-extraction.svg" alt="icona exodòncia" />
+          </div>
+          <h3 class="font-rounded">Exodòncia</h3>
+          <p>Extracció segura de dents danyades amb anestèsia local.</p>
+        </a>
+
+        <!-- Ortodòncia i invisible -->
+        <a href="ortodoncia.html" class="exp-card">
+          <div class="exp-card__icon" aria-hidden="true">
+            <img src="img/icons/010-braces.svg" alt="icona ortodòncia" />
+          </div>
+          <h3 class="font-rounded">Ortodòncia i ortodòncia invisible</h3>
+          <p>Corregeix la posició dental amb tècniques tradicionals o invisibles.</p>
+        </a>
+
+        <!-- Rehabilitació oral i pròtesi -->
+        <a href="rehabilitacio-protesi.html" class="exp-card">
+          <div class="exp-card__icon" aria-hidden="true">
+            <img src="img/icons/023-vita scale.svg" alt="icona pròtesi" />
+          </div>
+          <h3 class="font-rounded">Rehabilitació oral i pròtesi</h3>
+          <p>Recupera dents absents amb pròtesis fixes o removibles d'alta qualitat.</p>
+        </a>
+
+        <!-- Blanqueig dental -->
+        <a href="blanqueig.html" class="exp-card">
+          <div class="exp-card__icon" aria-hidden="true">
+            <img src="img/icons/008-tooth.svg" alt="icona blanqueig" />
+          </div>
+          <h3 class="font-rounded">Blanqueig dental</h3>
+          <p>Millora l'estètica dental amb un tractament segur i professional.</p>
+        </a>
+
+        <!-- Bruxisme -->
+        <a href="bruxisme.html" class="exp-card">
+          <div class="exp-card__icon" aria-hidden="true">
+            <img src="img/icons/005-mouthpiece.svg" alt="icona fèrula de descàrrega" />
+          </div>
+          <h3 class="font-rounded">Bruxisme (fèrula de descàrrega)</h3>
+          <p>Tractament personalitzat per evitar desgast dental i dolor mandibular.</p>
+        </a>
+
+        <!-- Periodòncia -->
+        <a href="periodoncia.html" class="exp-card">
+          <div class="exp-card__icon" aria-hidden="true">
+            <img src="img/icons/006-protection.svg" alt="icona periodòncia" />
+          </div>
+          <h3 class="font-rounded">Periodòncia</h3>
+          <p>Prevenció i cura de les malalties de la geniva.</p>
+        </a>
+
+        <!-- Restauradora i estètica -->
+        <a href="restauradora-estetica.html" class="exp-card">
+          <div class="exp-card__icon" aria-hidden="true">
+            <img src="img/icons/028-inspection.svg" alt="icona odontologia restauradora" />
+          </div>
+          <h3 class="font-rounded">Odontologia restauradora i estètica</h3>
+          <p>Repara dents danyades amb materials estètics i duradors.</p>
+        </a>
+
+        <!-- Implants -->
+        <a href="implants.html" class="exp-card">
+          <div class="exp-card__icon" aria-hidden="true">
+            <img src="img/icons/013-implant.svg" alt="icona implants dentals" />
+          </div>
+          <h3 class="font-rounded">Implants dentals</h3>
+          <p>Substitueix dents perdudes amb solucions fixes i resultats naturals.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- 🔹 FAQs -->
+    <section class="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <h2 id="faq-title" class="font-rounded">FAQs</h2>
+
+        <details class="faq-item">
+          <summary>Cada quant de temps s’ha de fer una revisió dental?</summary>
+          <p>És recomanable fer una revisió dental cada sis mesos o un cop l’any, segons les necessitats de cada pacient. Això permet detectar càries o problemes de geniva de manera precoç i mantenir una bona salut bucodental.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>El blanquejament dental fa mal o danya les dents?</summary>
+          <p>El blanquejament dental professional no danya l’esmalt si és realitzat per un odontòleg. Pot provocar una lleugera sensibilitat temporal, però desapareix al cap de pocs dies o amb tractaments dessensibilitzants.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Què puc fer si em fa por anar al dentista?</summary>
+          <p>És una situació molt habitual. Els professionals poden oferir tractaments amb tècniques de relaxació o sedació lleu per reduir l’ansietat. Explicar les pors a l’equip ajuda a adaptar el tracte i fer les visites més còmodes.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Quina diferència hi ha entre una neteja dental i una periodòncia?</summary>
+          <p>La neteja dental (profilaxi) elimina la placa i el càlcul superficial, mentre que la periodòncia (raspat i poliment) tracta infeccions més profundes de la geniva i els teixits de suport de la dent.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Quan és necessari posar un implant dental?</summary>
+          <p>Un implant dental és necessari quan s’ha perdut una dent i es vol recuperar la funció i l’estètica sense afectar les peces veïnes. És una solució fixa i duradora que actua com una arrel artificial.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Quins símptomes indiquen que necessito una endodòncia?</summary>
+          <p>Els més habituals són dolor intens o persistent, sensibilitat al fred o calor, o inflamació de la geniva. L’endodòncia permet conservar la dent tractant la infecció interna i eliminant el dolor.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <!-- 🔹 FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-text">
+          <h2 class="font-rounded">Clínica Dental Ribas</h2>
+          <p>Somriures sans i naturals des de 1983</p>
+        </div>
+
+        <div class="footer-links">
+          <a href="tractaments.html">Tractaments</a>
+          <a href="equip.html">Equip</a>
+          <a href="nosaltres.html">Nosaltres</a>
+          <a href="mútues.html">Mútues</a>
+          <a href="contacte.html">Contacte</a>
+        </div>
+
+        <div class="footer-legal">
+          <a href="avis-legal.html">Avís legal</a>
+          <span>·</span>
+          <a href="politica-privacitat.html">Política de privacitat</a>
+        </div>
+
+        <div class="footer-copy">
+          <p>© 2025 Clínica Dental Ribas · Tots els drets reservats</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CTA flotant (mateix comportament que en altres pàgines) -->
+  <div class="floating-cta" aria-label="Contacte ràpid">
+    <a href="tel:+34972213241" class="cta-btn cta-phone">📞 972 21 32 41</a>
+    <a href="https://wa.me/34639415461" class="cta-btn cta-wa" target="_blank" rel="noopener">💬 WhatsApp</a>
+  </div>
+
+  <script>
+    // Mostrar CTA en fer scroll
+    const cta = document.querySelector('.floating-cta');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) cta.classList.add('visible');
+      else cta.classList.remove('visible');
+    });
+  </script>
+</body>
+</html>

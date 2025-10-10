@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet">
+  <title>Mútues · Clínica Dental Ribas</title>
+
+  <!-- CSS global -->
+  <link rel="stylesheet" href="styles/reset.css" />
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="styles/pages.css" />
+  <!-- Reutilizamos estilos FAQ (ya definidos aquí) -->
+  <link rel="stylesheet" href="styles/tractaments.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/webp" sizes="32x32" href="img/favicon.webp">
+  <link rel="icon" type="image/webp" sizes="16x16" href="img/favicon.webp">
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon.webp">
+  <meta name="theme-color" content="#00c2ff">
+</head>
+
+<body class="page-mutues">
+  <!-- 🔹 NAVBAR -->
+  <header>
+    <nav class="navbar">
+      <!-- Logo -->
+      <a href="index.html" class="logo">
+        <img src="img/logo-clinica-ribas.webp" alt="Clínica Dental Ribas Logo" />
+      </a>
+
+      <!-- Botó menú mòbil -->
+      <button class="menu-toggle" aria-label="Obrir menú">
+        <span class="hamburger"></span>
+      </button>
+
+      <!-- Menú principal -->
+      <ul class="nav-links">
+        <li><a href="tractaments.html">Tractaments</a></li>
+        <li><a href="equip.html">Equip</a></li>
+        <li><a href="nosaltres.html">Nosaltres</a></li>
+        <li><a class="active" href="mútues.html">Mútues</a></li>
+        <li><a href="contacte.html">Contacte</a></li>
+      </ul>
+
+      <!-- Info de contacte -->
+      <div class="contact-info">
+        <a href="tel:+34972213241" class="phone">Tlf. 972 21 32 41</a>
+        <a href="https://wa.me/34639415461" target="_blank" class="whatsapp">WhatsApp. 639 41 54 61</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 🔹 HERO (banda verda + H1 petit) -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-container">
+        <div class="hero-text">
+          <h1 id="hero-title">
+            Mútues dentals a Girona
+          </h1>
+          <h2>
+            Col·laborem amb les principals asseguradores per facilitar-te l'accés als nostres tractaments dentals.
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🔹 BLOC 2 · Mútues i asseguradores -->
+
+        <!-- Llistat amb logos -->
+        <ul class="mutues-grid">
+          <li class="mutua-card">
+            <img src="img/mutues/asisa.webp" alt="Asisa logo">
+          </li>
+
+          <li class="mutua-card">
+            <img src="img/mutues/occident.webp" alt="Occidental logo">
+          </li>
+
+          <li class="mutua-card">
+            <img src="img/mutues/caser.webp" alt="Caser Seguros logo">
+          </li>
+
+          <li class="mutua-card">
+            <img src="img/mutues/general.webp" alt="Mútua General de Catalunya logo">
+          </li>
+
+          <li class="mutua-card">
+            <img src="img/mutues/mapfre.webp" alt="Mapfre logo">
+          </li>
+
+          <li class="mutua-card">
+            <img src="img/mutues/montepio.webp" alt="Montepio logo">
+          </li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- 🔹 BLOC 3 · Consulta cobertures -->
+    <section class="section" id="consulta-cobertures" aria-labelledby="consulta-title">
+      <div class="container">
+        <h2 id="consulta-title">No saps si la teva mútua cobreix el tractament?</h2>
+        <p>
+          Contacta amb el nostre equip i t'informarem sense compromís sobre les cobertures i avantatges de la teva assegurança dental.
+          T'ajudem a gestionar tot el procés de manera ràpida i fàcil.
+        </p>
+        <div>
+          <a href="contacte.html" class="btn-primary">Consulta-ho</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🔹 BLOC 4 · FAQs (reutiliza el component de Tractaments) -->
+    <section class="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <h2 id="faq-title" class="font-rounded">FAQs</h2>
+
+        <details class="faq-item">
+          <summary>Quins tractaments dentals cobreixen les mútues?</summary>
+          <p>Depèn de cada asseguradora i del tipus de pòlissa. En general, les mútues solen cobrir revisions, neteges, extraccions senzilles, radiografies i urgències. Altres tractaments com blanquejaments, ortodòncia o implants acostumen a tenir descomptes o tarifes reduïdes, però no sempre estan inclosos al 100 %.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Puc venir a la clínica si la meva mútua no hi treballa directament?</summary>
+          <p>Sí. Pots venir igualment com a pacient particular, i el nostre equip t'informarà de les tarifes i possibles descomptes. En alguns casos, fins i tot pots sol·licitar reemborsament parcial a la teva asseguradora.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Cal autorització prèvia de la mútua per fer tractaments?</summary>
+          <p>Només en alguns casos concrets. Tractaments més complexos, com endodòncies, pròtesis o ortodòncia, poden requerir autorització prèvia o un pressupost validat per la mútua. El nostre equip t’ajuda a tramitar-ho si és necessari.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Com puc saber si la meva assegurança cobreix un tractament concret?</summary>
+          <p>El més recomanable és consultar directament la teva pòlissa o contactar amb la mútua. Si ho prefereixes, nosaltres podem verificar la teva cobertura i explicar-te quins serveis estan inclosos o amb descompte.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Les mútues cobreixen tractaments d'estètica dental?</summary>
+          <p>En la majoria dels casos, els tractaments purament estètics (com el blanqueig o les carilles) no estan coberts totalment per les mútues, encara que sovint ofereixen tarifes especials o descomptes per a assegurats.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Puc combinar la meva mútua amb altres assegurances o beneficis?</summary>
+          <p>Sí, sempre que les assegurances ho permetin. Algunes persones tenen dues pòlisses o beneficis laborals que poden complementar la cobertura. El nostre equip pot revisar el teu cas i ajudar-te a aprofitar al màxim les teves opcions.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <!-- 🔹 FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-text">
+          <h2 class="font-rounded">Clínica Dental Ribas</h2>
+          <p>Somriures sans i naturals des de 1983</p>
+        </div>
+
+        <div class="footer-links">
+          <a href="tractaments.html">Tractaments</a>
+          <a href="equip.html">Equip</a>
+          <a href="nosaltres.html">Nosaltres</a>
+          <a href="mútues.html">Mútues</a>
+          <a href="contacte.html">Contacte</a>
+        </div>
+
+        <div class="footer-legal">
+          <a href="avis-legal.html">Avís legal</a>
+          <span>·</span>
+          <a href="politica-privacitat.html">Política de privacitat</a>
+        </div>
+
+        <div class="footer-copy">
+          <p>© 2025 Clínica Dental Ribas · Tots els drets reservats</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CTA flotant telèfon + WhatsApp -->
+  <div class="floating-cta" aria-label="Contacte ràpid">
+    <a href="tel:+34972213241" class="cta-btn cta-phone">📞 972 21 32 41</a>
+    <a href="https://wa.me/34639415461" class="cta-btn cta-wa" target="_blank" rel="noopener">💬 WhatsApp</a>
+  </div>
+
+  <script>
+    // Mostrar/ocultar CTA en fer scroll (igual que a la resta)
+    const cta = document.querySelector('.floating-cta');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) cta.classList.add('visible');
+      else cta.classList.remove('visible');
+    });
+  </script>
+</body>
+</html>
