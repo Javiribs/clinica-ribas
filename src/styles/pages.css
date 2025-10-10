@@ -256,7 +256,7 @@
 /* 🔹 Bloc 3: Tractaments (mateix disseny que “La nostra experiència” del index) */
 .page-nosaltres .experience.section {
   background-color: #ffffff;
-  padding: 6rem 0;
+  padding-bottom: 6rem;
 }
 
 /* Header */
@@ -582,6 +582,235 @@
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-4px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+/* ------------------------------------------------------------ */
+/* 🔹 PÀGINA CONTACTE                                           */
+/* ------------------------------------------------------------ */
+
+/* ----- HERO  ----- */
+.page-contacte .hero {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+}
+
+.page-contacte .hero-container {
+  max-width: 1200px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* ✅ text i imatge costat a costat */
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.page-contacte .hero-text {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.page-contacte .hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-contacte .hero-image img {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 22px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  object-fit: cover;
+}
+
+.page-contacte .hero h1 {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  color: var(--text-dark);
+  margin-bottom: 0.75rem;
+  font-family: "Arial Rounded MT Bold", "Nunito", sans-serif;
+}
+
+.page-contacte .hero h2 {
+  font-size: 1.25rem;
+  color: var(--text-dark);
+  opacity: 0.9;
+  max-width: 65ch;
+  margin: 0 auto 1rem;
+  line-height: 1.5;
+}
+
+.page-contacte .hero p {
+  font-size: 1rem;
+  color: var(--text-dark);
+  opacity: 0.85;
+  max-width: 70ch;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.page-contacte .hero .hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* ------------------------------------------------------------ */
+/* 🔹 CONTACT ROWS (versió simple sense targetes)               */
+/* ------------------------------------------------------------ */
+
+.contact-rows {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-radius: 28px;                 /* cantonades grans com la UI general */
+  margin-top: 1rem;
+}
+
+.contact-rows .container {
+  max-width: 1100px;
+}
+
+.contact-rows__header {
+  text-align: left;
+  margin-bottom: 1.25rem;
+}
+
+.contact-rows__header h2 {
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+  color: var(--text-dark);
+  margin: 0 0 .35rem 0;
+}
+
+.contact-rows__header p {
+  color: var(--text-dark);
+  opacity: .85;
+  margin: 0;
+}
+
+.contact-rows__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* 3 columnes: Adreça, Horari, Contacte */
+  gap: 2rem 3rem;
+  padding-top: 1rem;
+}
+
+.contact-col h3 {
+  font-size: 1.05rem;
+  color: var(--text-dark);
+  margin-bottom: .5rem;
+}
+
+.contact-col p {
+  margin: .2rem 0;
+  color: var(--text-dark);
+  opacity: .9;
+  line-height: 1.6;
+}
+
+.contact-rows .link-inline {
+  text-decoration: none;
+  border-bottom: 2px solid rgba(0,0,0,.12);
+  padding-bottom: 2px;
+  transition: border-color .2s ease, opacity .2s ease;
+  color: var(--text-dark);
+}
+
+.contact-rows .link-inline:hover {
+  border-color: var(--accent);
+  opacity: 1;
+}
+
+/* ----- Secció mapa (bloc 3) ----- */
+
+.contact-map {
+  background: #fff;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+.contact-map__container {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-map__text {
+  max-width: 70ch;
+  margin: 0.5rem auto 1.5rem;
+  color: var(--text-dark);
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+.contact-map__card {
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.contact-map__card iframe {
+  display: block;
+  width: 100%;
+  height: 420px;
+  border: 0;
+}
+
+.contact-map__button {
+  margin-top: 1.5rem;
+}
+
+/* ----- CTA flotant ----- */
+.floating-cta {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 999;
+}
+
+.floating-cta.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.floating-cta .cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.65rem 1rem;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.floating-cta .cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.floating-cta .cta-phone {
+  background: #00b386;
+}
+
+.floating-cta .cta-wa {
+  background: #25d366;
 }
 
 
