@@ -814,6 +814,242 @@
 }
 
 
+/* ------------------------------------------------------------ */
+/* AVÍS LEGAL – estilos locales                                 */
+/* ------------------------------------------------------------ */
+
+/* HERO Avís legal: reducir altura y centrar contenido */
+.page-legal .hero{
+  min-height: auto !important;      /* anula el 70vh global */
+  padding: 0 !important;            /* quitamos padding extra del hero */
+}
+
+.page-legal .hero .hero-container{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important; /* centra el bloque interior */
+  gap: 0 !important;
+  min-height: 32vh !important;        /* altura real más baja */
+  padding: 2rem !important;           /* padding interno del “card” verde */
+  margin: 0 auto !important;
+  width: min(1000px, 92%) !important; /* opcional, controla ancho */
+}
+
+.page-legal .hero .hero-text{
+  text-align: center !important;
+  margin: 0 !important;
+  max-width: 760px !important;
+}
+
+.page-legal .hero .hero-text h1{
+  margin: 0 0 .35rem 0 !important;
+  font-size: clamp(1.9rem, 3vw, 2.3rem) !important;
+}
+
+.page-legal .hero .hero-text h2{
+  margin: 0 !important;
+  font-size: clamp(1rem, 2vw, 1.1rem) !important;
+  font-weight: 500 !important;
+  opacity: .85 !important;
+}
+
+
+.page-legal .section{
+  background:#fff;
+  padding: 2.4rem 0 3.2rem;
+}
+
+.page-legal .section .container{
+  width: min(900px, 92%);
+  margin: 0 auto;
+  /* tarjeta suave */
+  padding: 1.4rem 1.2rem;
+}
+
+/* Tipografía y ritmo vertical */
+.page-legal h2{
+  font-size: clamp(1.15rem, 2.1vw, 1.45rem);
+  color: var(--text-dark);
+  margin: 1.6rem 0 .5rem;
+  line-height: 1.25;
+  position: relative;
+  scroll-margin-top: 90px; /* navegación por anclas si la hay */
+}
+
+/* Párrafos y listas */
+.page-legal p{
+  color: var(--text-dark);
+  opacity:.95;
+  line-height: 1.58;
+  margin: 0 0 .9rem 0;
+  word-break: break-word;
+}
+
+.page-legal ul{
+  list-style: none;
+  padding-left: 0;
+  margin: .4rem 0 1.1rem;
+}
+
+.page-legal li{
+  position: relative;
+  padding-left: 1.4rem;
+  margin: .35rem 0;
+}
+
+/* Viñeta personalizada */
+.page-legal li::before{
+  content:"";
+  position:absolute;
+  left:0; top:.55em;
+  width:.5rem; height:.5rem;
+}
+
+/* Enlaces accesibles */
+.page-legal a{
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: rgba(0,0,0,.25);
+}
+.page-legal a:hover,
+.page-legal a:focus{
+  text-decoration-color: currentColor;
+}
+
+/* Píldora para la fecha de actualización */
+.page-legal .legal-updated{
+  display:inline-block;
+  background:#eefcf6;
+  border:1px solid #dff7ed;
+  border-radius:999px;
+  padding:.4rem .8rem;
+  font-size: .92rem;
+  margin-top:.25rem;
+}
+
+/* ------------------------------------------------------------ */
+/* 🟢 POLÍTICA DE PRIVACITAT – estils locals                    */
+/* ------------------------------------------------------------ */
+
+/* HERO curt i centrat */
+.page-legal .hero{
+  min-height: auto !important;
+  padding: 0 !important;
+}
+
+.page-legal .hero .hero-container{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 32vh !important;
+  padding: 2rem !important;
+  margin: 0 auto !important;
+  width: min(1000px, 92%) !important;
+  text-align: center !important;
+}
+
+.page-legal .hero .hero-text{
+  max-width: 760px !important;
+  margin: 0 auto !important;
+}
+
+.page-legal .hero .hero-text h1{
+  margin: 0 0 .35rem 0 !important;
+  font-size: clamp(1.9rem, 3vw, 2.3rem) !important;
+  color: var(--text-dark) !important;
+}
+
+.page-legal .hero .hero-text h2{
+  margin: 0 !important;
+  font-size: clamp(1rem, 2vw, 1.1rem) !important;
+  font-weight: 500 !important;
+  opacity: .85 !important;
+  color: var(--text-dark) !important;
+}
+
+/* Cos principal */
+.page-legal .section{
+  background:#fff;
+  padding: 2.4rem 0 3.2rem;
+}
+
+.page-legal .section .container{
+  width: min(900px, 92%);
+  margin: 0 auto;
+  padding: 1.6rem 1.4rem;
+}
+
+/* Títols */
+.page-legal h2{
+  font-size: clamp(1.15rem, 2.1vw, 1.45rem);
+  color: var(--text-dark);
+  margin: 1.6rem 0 .5rem;
+  line-height: 1.25;
+  position: relative;
+  scroll-margin-top: 90px;
+}
+
+.page-legal h2::before{
+  content:"";
+  position:absolute;
+  left:-.75rem;
+  top:.55em;
+  width:8px;
+  height:8px;
+}
+
+/* Text i paràgrafs */
+.page-legal p{
+  color: var(--text-dark);
+  opacity:.95;
+  line-height: 1.58;
+  margin: 0 0 .9rem 0;
+  word-break: break-word;
+}
+
+.page-legal ul{
+  list-style: none;
+  padding-left: 0;
+  margin: .4rem 0 1.1rem;
+}
+
+.page-legal li{
+  position: relative;
+  padding-left: 1.4rem;
+  margin: .35rem 0;
+}
+
+.page-legal li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:.55em;
+  width:.5rem;
+  height:.5rem;
+}
+
+/* Enllaços */
+.page-legal a{
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: rgba(0,0,0,.25);
+}
+.page-legal a:hover,
+.page-legal a:focus{
+  text-decoration-color: currentColor;
+}
+
+/* Píldora de data d’actualització */
+.page-legal .legal-updated{
+  display:inline-block;
+  padding:.4rem .8rem;
+  font-size:.92rem;
+  margin-top:.25rem;
+}
+
+
+
+
 
 
 
