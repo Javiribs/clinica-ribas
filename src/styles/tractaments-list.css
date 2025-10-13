@@ -503,6 +503,35 @@ header.is-stuck { box-shadow: 0 6px 18px rgba(15,23,42,.06); }
   .page-tractament #reserva .btn-primary{ width:100%; }
 }
 
+/* ===== Fix centrado Bloc 4 (Reserva) ===== */
+
+/* 1) El contenedor del bloc se convierte en un “centro” real */
+.page-tractament #reserva .container.center-narrow{
+  display: grid;                 /* más fuerte que block */
+  place-items: center;           /* centra todo (horizontal + vertical) */
+  text-align: center !important; /* gana a cualquier regla previa */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;               /* elimina posibles sangrías raras */
+  padding-right: 0;
+}
+
+/* 2) Fuerza a que h2 y p hereden ese centrado (por si hay reglas globales) */
+.page-tractament #reserva .container.center-narrow h2,
+.page-tractament #reserva .container.center-narrow p{
+  text-align: inherit !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 3) Asegura que el botón quede centrado */
+.page-tractament #reserva .cta-wrap{
+  width: 100%;
+  display: flex;
+  justify-content: center !important;
+}
+
+
 
 /* ------- FOOTER ------- */
 .footer {
