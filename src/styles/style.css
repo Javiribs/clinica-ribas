@@ -5,6 +5,7 @@ html, body { width: 100%; overflow-x: hidden; }
 
 :root{
   --verde-ribas: #097C3F;
+  --hero-h1-color: var(--text-dark);
   --azul-h1: #002b5c;
 }
 
@@ -174,7 +175,7 @@ header.is-stuck { box-shadow: 0 6px 18px rgba(15,23,42,.06); }
 .hero-text h1 {
   font-family: "Nunito", "Arial Rounded MT Bold", sans-serif;
   font-size: 3rem;
-  color: #002b5c;
+  color: var(--hero-h1-color);
   margin-bottom: 1rem;
 }
 

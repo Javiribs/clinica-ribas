@@ -1048,6 +1048,20 @@
 }
 
 
+/* Neutraliza colores sueltos de páginas que pisaban el título del hero */
+.page-equip .hero .hero-text h1,
+.page-legal .hero .hero-text h1,
+.page-tractaments .hero .hero-text h1,
+.page-nosaltres .hero .hero-text h1,
+.page-mutues .hero .hero-text h1,
+.page-contacte .hero .hero-text h1{
+  color: var(--hero-h1-color);
+}
+
+.hero-text--equip{ color: inherit; }
+
+
+
 
 
 
