@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="styles/reset.css" />
   <link rel="stylesheet" href="styles/style.css" />
   <link rel="stylesheet" href="styles/pages.css" />
+  <link rel="stylesheet" href="styles/responsive.css" />
 
   <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
@@ -36,7 +37,7 @@
 </head>
 
 <body class="page-contacte">
-  <!-- 🔹 NAVBAR -->
+  <!-- 🔹 NAVBAR CLÍNICA DENTAL RIBAS -->
   <header>
     <nav class="navbar">
       <!-- Logo -->
@@ -44,7 +45,7 @@
         <img src="img/logo-clinica-ribas.webp" alt="Clínica Dental Ribas Logo" />
       </a>
 
-      <!-- Botó menú mòbil -->
+      <!-- Botón menú móvil -->
       <button class="menu-toggle" aria-label="Obrir menú">
         <span class="hamburger"></span>
       </button>
@@ -55,10 +56,9 @@
         <li><a href="equip.html">Equip</a></li>
         <li><a href="nosaltres.html">Nosaltres</a></li>
         <li><a href="mutues.html">Mútues</a></li>
-        <li><a class="active" href="contacte.html">Contacte</a></li>
+        <li><a href="contacte.html">Contacte</a></li>
       </ul>
 
-      <!-- Info de contacte resumida -->
       <div class="contact-info">
         <a href="tel:+34972213241" class="phone">Tlf. 972 21 32 41</a>
         <a href="https://wa.me/34639415461" target="_blank" class="whatsapp">WhatsApp. 639 41 54 61</a>
@@ -194,6 +194,35 @@
       if (window.scrollY > 100) cta.classList.add('visible');
       else cta.classList.remove('visible');
     });
+  </script>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav-links');
+
+    function closeMenu(){
+      toggle.classList.remove('active');
+      nav.classList.remove('show');
+    }
+
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggle.classList.toggle('active');
+      nav.classList.toggle('show');
+    });
+
+    // Cerrar al hacer click fuera
+    document.addEventListener('click', (e) => {
+      if (!nav.contains(e.target) && !toggle.contains(e.target)) closeMenu();
+    });
+
+    // Cerrar si se redimensiona por encima de 768px
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) closeMenu();
+    });
+
+    // Cerrar al pinchar un enlace del menú
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
   </script>
 </body>
 </html>

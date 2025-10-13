@@ -1,0 +1,645 @@
+/* ===== Fondo global verde difuminado ===== */
+
+/* Evitar scroll horizontal en toda la página */
+html, body { width: 100%; overflow-x: hidden; }
+
+:root{
+  --verde-ribas: #097C3F;
+  --hero-h1-color: var(--text-dark);
+  --azul-h1: #002b5c;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Inter, Arial, sans-serif;
+  color: #0f172a;
+  line-height: 1.5;
+}
+
+/* --- Navbar --- */
+
+header{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: transparent; /* se ve el fondo verde del body */
+}
+
+header.is-stuck { box-shadow: 0 6px 18px rgba(15,23,42,.06); }
+
+.navbar{
+  /* centramos la barra dentro del ancho máximo de la página */
+  width: 100%;
+  margin: 44px 0 0;
+  padding: 0 56px;  
+  display: flex;
+  align-items: center;       /* 🔹 centra verticalmente logo + menú */
+  justify-content: space-between;
+  gap: 24px;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+/* Fuente de los títulos del navbar */
+.nav-links a,
+.contact-info a {
+  font-family: "Nunito", "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+  letter-spacing: 0.2px; /* un toque de aire para que respire */
+}
+
+/* Logo */
+.logo{ display:flex; align-items:center; }
+.logo img{
+  height: 72px;
+  width: auto;
+}
+
+/* Menú */
+.nav-links{
+  display: flex;
+  align-items: center;
+  justify-content: center;   /* 🔹 menú centrado respecto a la barra */
+  gap: 12px;
+  flex: 1;                   /* 🔹 ocupa el espacio entre logo y vacío */
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links a{
+  font-size: 1.25rem;
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #334155;
+  font-weight: 600;
+  transition: all .22s ease;
+  background: transparent;
+  border: none;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+  background: #097C3F;   /* verde corporativo */
+  color: #ffffff;         /* texto blanco */
+  border-color: transparent;
+  transform: translateY(-1px);
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;     /* una línea encima de otra */
+  align-items: flex-end;
+  gap: 4px;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.contact-info a {
+  color: #334155;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+/* Hover en verde corporativo */
+.contact-info a:hover {
+  color: #097C3F;
+}
+
+/* Teléfono con icono */
+.contact-info .phone::before {
+  content: "📞 ";
+  font-size: 1rem;
+}
+
+/* WhatsApp con icono */
+.contact-info .whatsapp::before {
+  content: "💬 ";
+  font-size: 1rem;
+}
+
+/* Ocultar el botón hamburguesa (esa rayita bajo el logo) */
+.menu-toggle{ display: none; }
+
+/* -------HERO------- */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1rem;
+  min-height: 70vh;
+  background-color: #ffffff;
+}
+
+
+.hero-container{
+  width: 72%;
+  max-width: 1400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;          /* centra verticalmente el texto */
+  padding: 2rem 4rem 0.5rem; /* menos alto; poco padding inferior */
+  border-radius: 3rem;
+  position: relative;
+  overflow: hidden;             /* la imagen se recorta con el borde redondeado */
+  min-height: 410px;            /* en vez de alturas grandes */
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+}
+
+/* Difuminado verde eléctrico en esquinas */
+.hero-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top left, rgba(111, 255, 176, 0.25), transparent 60%),
+    radial-gradient(circle at bottom right, rgba(111, 255, 176, 0.25), transparent 60%);
+  border-radius: inherit;
+  z-index: 0;
+}
+
+/* ------Texto del Hero------ */
+.hero-text{
+  flex: 0 1 60%;
+  max-width: 60%;
+  margin-left: 40px;
+  margin-top: -6px;             /* pequeño empuje hacia arriba */
+}
+
+.hero-text h1 {
+  font-family: "Nunito", "Arial Rounded MT Bold", sans-serif;
+  font-size: 3rem;
+  color: var(--hero-h1-color);
+  margin-bottom: 1rem;
+}
+
+.hero-text h2 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  max-width: 600px; /* 🔹 ancho controlado */
+  line-height: 1.5;
+}
+
+/* -----------------------------------------------------------
+   HERO · Icono interior
+   ----------------------------------------------------------- */
+.page-tractament .hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+/* Bloque del icono */
+.page-tractament .hero-image {
+  flex: 0 0 160px;          /* ancho mayor */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1.5rem;     /* separa del borde derecho */
+}
+
+/* Imagen del icono */
+.page-tractament .hero-image img {
+  width: 250px;
+  height: auto;
+  filter: brightness(0) saturate(100%) invert(71%) sepia(10%) saturate(593%) hue-rotate(88deg) brightness(92%) contrast(85%);
+  opacity: 0.85;
+}
+
+/* ===========================
+   BLOC 2 · SÍMPTOMES
+   =========================== */
+.page-tractament #simptomes .container{
+  width: var(--container-w);
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid #eef2f6;
+  border-radius: 18px;
+  padding: 1.4rem 1.6rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,.04);
+}
+
+.page-tractament #simptomes h2{
+  margin-bottom: .6rem;
+}
+
+.page-tractament #simptomes p{
+  margin: 0 0 .6rem 0;
+  color: var(--text-dark);
+  opacity: .95;
+}
+
+/* Lista en 2 columnas (desktop) con bullets personalizados */
+.page-tractament #simptomes ul{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: .35rem 1.25rem;
+  list-style: none;
+  margin: .25rem 0 0;
+  padding: 0;
+}
+
+.page-tractament #simptomes li{
+  position: relative;
+  padding-left: 1.4rem;
+  line-height: 1.55;
+}
+
+/* “check” sutil en verde corporativo */
+.page-tractament #simptomes li::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .35rem;
+  width: .85rem; height: .85rem;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, #b9f4d2 0%, #76d8a2 80%);
+  box-shadow: inset 0 0 0 2px rgba(9,124,63,.18);
+}
+
+/* ===========================
+   BLOC 3 · BENEFICIS
+   =========================== */
+.page-tractament #beneficis .container{
+  width: var(--container-w);
+  margin: 0 auto;
+  background: linear-gradient(180deg, var(--brand-100), #f6fefa);
+  border: 1px solid #e8f5ee;
+  border-radius: 18px;
+  padding: 1.5rem 1.6rem;
+  box-shadow: 0 10px 28px rgba(9,124,63,.08);
+}
+
+.page-tractament #beneficis h2{
+  margin-bottom: .6rem;
+}
+
+.page-tractament #beneficis p{
+  margin: 0 0 .6rem 0;
+  opacity: .95;
+}
+
+/* misma retícula que en símptomes */
+.page-tractament #beneficis ul{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: .35rem 1.25rem;
+  list-style: none;
+  margin: .25rem 0 0;
+  padding: 0;
+}
+
+.page-tractament #beneficis li{
+  position: relative;
+  padding-left: 1.4rem;
+  line-height: 1.55;
+}
+
+.page-tractament #beneficis li::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .35rem;
+  width: .85rem; height: .85rem;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 0 0 2px rgba(9,124,63,.2), inset 0 0 0 999px rgba(9,124,63,.12);
+}
+
+/* ===========================
+   BLOC 4 · RESERVA VISITA (CTA)
+   =========================== */
+.page-tractament #reserva{
+  padding-top: 0; /* pegado al bloque anterior, si lo prefieres */
+}
+
+.page-tractament #reserva .container{
+  width: var(--container-w);
+  margin: 0 auto;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #eef2f6;
+  border-radius: 22px;
+  padding: 1.7rem 1.6rem;
+  box-shadow: 0 12px 30px rgba(0,0,0,.06);
+}
+
+.page-tractament #reserva h2{
+  margin: 0 0 .4rem 0;
+}
+
+.page-tractament #reserva p{
+  max-width: 800px;
+  margin: 0 auto .9rem;
+  color: var(--text-dark);
+  opacity: .95;
+}
+
+.page-tractament #reserva .cta-wrap{
+  display: flex;
+  justify-content: center;
+}
+
+/* ==========================================================
+   Tipografia blocs 2–4 (Símptomes, Beneficis, Reserva)
+   Coherente con el resto de páginas: Nunito fuerte, tamaños
+   fluidos, buen interlineado y separación
+   ========================================================== */
+
+/* H2 — título de sección */
+.page-tractament #simptomes h2,
+.page-tractament #beneficis h2,
+.page-tractament #reserva h2{
+  font-family: "Nunito","Arial Rounded MT Bold",sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.6rem, 2.8vw, 2.1rem);
+  line-height: 1.2;
+  letter-spacing: .2px;
+  color: var(--text-dark, #0f172a);
+  margin: 0 0 .55rem 0;
+  text-wrap: balance;            /* rompe mejor en 2–3 líneas */
+}
+
+/* H3 — subtítulos internos (si los hubiera en estos blocs) */
+.page-tractament #simptomes h3,
+.page-tractament #beneficis h3,
+.page-tractament #reserva h3{
+  font-family: "Nunito","Arial Rounded MT Bold",sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.1rem, 1.9vw, 1.25rem);
+  line-height: 1.35;
+  color: var(--text-dark, #0f172a);
+  margin: .15rem 0 .5rem 0;
+  opacity: .95;
+}
+
+/* P — texto principal (primer párrafo de cada bloc) */
+.page-tractament #simptomes p:first-of-type,
+.page-tractament #beneficis p:first-of-type,
+.page-tractament #reserva p:first-of-type{
+  font-size: clamp(1rem, 1.6vw, 1.1rem);
+  line-height: 1.65;
+  color: var(--text-dark, #0f172a);
+  font-weight: 500;              /* un pelín más marcado */
+  margin: 0 0 .85rem 0;
+  opacity: .95;
+}
+
+/* P — resto de párrafos (si hay más de uno) */
+.page-tractament #simptomes p:not(:first-of-type),
+.page-tractament #beneficis p:not(:first-of-type),
+.page-tractament #reserva p:not(:first-of-type){
+  font-size: clamp(.975rem, 1.4vw, 1.05rem);
+  line-height: 1.6;
+  color: var(--text-dark, #0f172a);
+  margin: 0 0 .7rem 0;
+  opacity: .9;
+}
+
+/* Ajuste de alineación en el CTA (reserva) */
+.page-tractament #reserva .container{
+  text-align: center;            /* refuerza coherencia visual */
+}
+
+/* ===== Ajustes de layout y espaciado (Blocs 2, 3, 4) ===== */
+
+/* 1) Más distancia entre el Bloc 2 (Símptomes) y el Bloc 3 (Beneficis) */
+.page-tractament #simptomes.section { padding-bottom: 2.4rem; }
+.page-tractament #beneficis.section { margin-top: 1.2rem; }
+
+/* 2) Reducir ancho y centrar (Blocs 2 y 3) */
+.page-tractament #simptomes .container,
+.page-tractament #beneficis .container{
+  /* más estrecho y centrado */
+  width: min(980px, 90%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 3) Centrar y estrechar Bloc 4 (Reserva) */
+.page-tractament #reserva .container{
+  width: min(820px, 92%);
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;         /* refuerzo de alineación */
+}
+
+.btn-primary,
+.btn-secondary {
+  color: #097C3F;                        /* texto del color del navbar */
+  border: 2px solid #097C3F;             /* mismo color en el borde */
+  background-color: transparent;         /* sin relleno por defecto */
+  padding: 0.9rem 1.8rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* ===== Refinamiento del BLOC 4 · RESERVA VISITA ===== */
+.page-tractament #reserva.section {
+  background: transparent;          /* sin tarjeta */
+  padding: 4rem 0 4.5rem;          /* más espacio arriba y abajo */
+}
+
+.page-tractament #reserva .container {
+  background: none;                 /* elimina recuadro */
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  text-align: center;
+  width: min(780px, 90%);
+  margin: 0 auto;
+}
+
+.page-tractament #reserva h2 {
+  margin-bottom: 0.8rem;
+}
+
+.page-tractament #reserva p {
+  max-width: 680px;
+  margin: 0 auto 1.2rem;
+  color: var(--text-dark);
+  font-size: clamp(1rem, 1.6vw, 1.1rem);
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* Botón coherente con el resto del sitio */
+.page-tractament #reserva .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 240px;
+  padding: 1rem 1.6rem;
+  border-radius: 999px;
+  font-family: "Nunito","Arial Rounded MT Bold",sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  color: #fff;
+  background: var(--verde-ribas,#097C3F);
+  box-shadow: 0 10px 26px rgba(9,124,63,.18);
+  transition: transform .2s ease, box-shadow .2s ease, background .25s ease;
+}
+
+.page-tractament #reserva .btn-primary:hover {
+  background: #0b8c48;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(9,124,63,.25);
+}
+
+.page-tractament #reserva .btn-primary:active {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 540px){
+  .page-tractament #reserva .btn-primary{ width:100%; }
+}
+
+
+/* ------- FOOTER ------- */
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 4rem;
+  background-color: #fff;
+}
+
+/* Caja central del footer con el mismo estilo que el hero y clínica */
+.footer-container {
+  width: 90%;
+  max-width: 1400px;
+  border-radius: 3rem;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  background: #ffffff;
+}
+
+/* Fondo difuminado verde igual al hero */
+.footer-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top left, rgba(111, 255, 176, 0.25), transparent 60%),
+    radial-gradient(circle at bottom right, rgba(111, 255, 176, 0.25), transparent 60%);
+  z-index: 0;
+}
+
+.footer-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.footer-text h2 {
+  font-family: "Nunito", "Arial Rounded MT Bold", sans-serif;
+  font-size: 2rem;
+  color: var(--azul-h1);
+  margin-bottom: 0.5rem;
+}
+
+.footer-text p {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  opacity: 0.8;
+  margin-bottom: 2rem;
+}
+
+/* Enlaces centrados */
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #097C3F;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #05582d;
+}
+
+/* Texto final */
+.footer-copy {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  color: var(--text-dark);
+}
+
+/* ------- Enlaces legales en el footer ------- */
+.footer-legal {
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.footer-legal a {
+  color: #097C3F;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-legal a:hover {
+  color: #05582d;
+}
+
+.footer-legal span {
+  margin: 0 0.5rem;
+  color: rgba(0,0,0,0.4);
+}
+
+
+/* ===== Botones flotantes teléfono/WhatsApp ===== */
+.floating-cta {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1200;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.floating-cta.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: .85rem 1.1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #fff;
+  background: #097C3F;
+  box-shadow: 0 10px 24px rgba(0,0,0,.16);
+  transition: transform .15s ease;
+}
+.cta-btn:hover { transform: translateY(-2px); }
+.cta-wa { background: #0B8E53; }

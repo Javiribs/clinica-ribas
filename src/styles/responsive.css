@@ -1,0 +1,737 @@
+/* =========================================================
+   responsive.css — Ajustes responsive globales y por página
+   Depende de: reset.css, style.css, pages.css
+   Breakpoints: 1200 / 992 / 768 / 600 / 480
+   ========================================================= */
+
+
+/* =========================
+   ≤ 1200px (lg)
+   ========================= */
+@media (max-width: 1200px) {
+
+  /* Hero (global) */
+  .hero-container{
+    width: min(94%, 1200px);
+    padding: 1.6rem 2rem 0.5rem;
+  }
+
+  /* Imagen hero home */
+  .hero-image-2 img{ height: 320px; }
+
+  /* Grid experiencia / tarjetas (home + nosaltres) */
+  .exp-grid{
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Staff (EQUIP) */
+  .page-equip .staff-photo{
+    width: 160px; height: 160px;
+  }
+
+  /* Mútues */
+  .page-mutues .mutues-grid{
+    grid-template-columns: repeat(3, minmax(240px, 1fr));
+    width: min(1000px, 94%);
+  }
+}
+
+
+/* =========================
+   ≤ 992px (md)
+   ========================= */
+@media (max-width: 992px) {
+
+  /* Navbar básico (sin JS de toggle) */
+  .navbar{
+    padding: 0 28px;
+    margin-top: 28px;
+    gap: 16px;
+  }
+  .menu-toggle{ display: block; }  /* visible, aunque no se use */
+  .contact-info{ display: none; }  /* ganamos espacio en tablets */
+  .nav-links{
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .nav-links a{ padding: 10px 16px; font-size: 1rem; }
+
+  /* Hero dos columnas → proporciones más cómodas */
+  .hero-text{ flex-basis: 58%; max-width: 58%; margin-left: 24px; }
+  .hero-image{ margin-right: 40px; }
+  .hero-image-2{ margin-right: 2rem; }
+  .hero-image-2 img{ height: 290px; }
+
+  /* Experiencia / tarjetas */
+  .exp-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* “Clínica” card ancha */
+  .clinica-card{
+    width: 94%;
+  }
+  .clinica-card__content{
+    grid-template-columns: 1fr minmax(440px, 700px) 1fr;
+    padding: 1rem 2rem 1.25rem;
+  }
+  .clinica-card__text h2{ font-size: 2.2rem; }
+
+  /* Contacte: tres columnas → dos */
+  .contact-rows__grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Staff (EQUIP): 12 cols → cards a 6 col (2 por fila) */
+  .page-equip .staff-grid{ grid-template-columns: repeat(12, 1fr); }
+  .page-equip .staff-card{ grid-column: span 6; }
+
+  /* Nosaltres hero */
+  .page-nosaltres .hero-image img{
+    max-width: 380px;
+    border-radius: 1.1rem;
+    filter: brightness(1.05) saturate(0.95) blur(0.3px);
+  }
+
+  /* Mútues: 3 → 2 columnas */
+  .page-mutues .mutues-grid{
+    grid-template-columns: repeat(2, minmax(240px, 1fr));
+    width: min(820px, 96%);
+  }
+
+  /* Footer */
+  .footer-container{ width: 94%; }
+}
+
+
+/* =========================
+   ≤ 768px (sm/tablet)
+   ========================= */
+@media (max-width: 768px) {
+
+  /* Tipografía del hero */
+  .hero-text h1{ font-size: 2.2rem; }
+  .hero-text h2{ font-size: 1rem; max-width: 52ch; }
+  .hero-buttons{ gap: 0.8rem; margin-top: 1.2rem; }
+
+  /* Hero: stack vertical */
+  .hero{
+    min-height: auto;
+    padding-top: 0.5rem;
+  }
+  .hero-container{
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 1.25rem 1rem;
+    min-height: unset;
+  }
+  .hero-text{
+    flex-basis: auto;
+    max-width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+  .hero-image,
+  .hero-image-2{
+    flex-basis: auto;
+    margin: 0;
+    justify-content: center;
+    align-self: center;
+  }
+  .hero-image img,
+  .hero-image-2 img{
+    height: 240px;
+    max-width: 85%;
+  }
+
+  /* Tarjetas experiencia */
+  .exp-card{ padding-bottom: 3.4rem; }
+  .exp-card__icon img{ width: 76px; }
+
+  /* “Clínica” card */
+  .clinica-card{
+    aspect-ratio: auto;
+    min-height: 300px;
+  }
+  .clinica-card__content{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    padding: 1rem 1rem 1.25rem;
+  }
+  .clinica-card__text{
+    grid-column: 1; grid-row: 1; padding-top: 22px;
+  }
+  .clinica-card__content .btn-primary{
+    grid-column: 1; grid-row: 2; margin-top: .75rem;
+  }
+  .clinica-card__text h2{ font-size: 2rem; }
+
+  /* Contacte: mapa más bajo */
+  .contact-map__card iframe{ height: 340px; }
+
+  /* Nosaltres: cards más apretadas */
+  .page-nosaltres .invest-text{ margin-bottom: 1.25rem; }
+  .page-nosaltres .experience.section .exp-grid{
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Mútues: tarjetas algo más compactas */
+  .page-mutues .mutua-card{
+    max-width: 260px;
+    padding: 1.25rem .9rem;
+  }
+  .page-mutues #consulta-cobertures{
+    width: 94%;
+    margin: 4rem auto 3rem;
+    padding: 2.5rem 1.25rem;
+  }
+
+  /* Footer padding */
+  .footer-content{ padding: 2.2rem 1.25rem; }
+
+   /* 🔹 HERO TRACTAMENTS: ocultar títulos h2 y h3 */
+  .page-tractaments .hero h2,
+  .page-tractaments .hero h3 {
+    display: none !important;
+  }
+
+  /* 🔹 Texto introductorio debajo del hero */
+  .page-tractaments .intro p {
+    display: none !important;
+  }
+
+  /* 🔹 Párrafo dentro de cada ficha de tractament */
+  .page-tractaments .exp-card p {
+    display: none !important;
+  }
+}
+
+
+/* =========================
+   ≤ 600px (xs grande)
+   ========================= */
+@media (max-width: 600px) {
+
+  /* Menú en columna (siempre visible) */
+  .nav-links{
+    width: 100%;
+    justify-content: center;
+    gap: 8px 10px;
+  }
+  .nav-links a{
+    padding: 8px 14px;
+    font-size: .95rem;
+  }
+
+  /* Grids a 1 columna */
+  .exp-grid,
+  .page-nosaltres .experience.section .exp-grid{
+    grid-template-columns: 1fr !important;
+  }
+  .contact-rows__grid{
+    grid-template-columns: 1fr;
+  }
+  .page-equip .staff-card{ grid-column: 1 / -1; }
+
+  /* Hero imágenes aún más bajas */
+  .hero-image img,
+  .hero-image-2 img{
+    height: 210px;
+  }
+
+  /* Mútues: 1 columna */
+  .page-mutues .mutues-grid{
+    grid-template-columns: 1fr;
+    width: min(520px, 94%);
+  }
+
+  /* CTA flotante: compacta */
+  .floating-cta{ right: 14px; bottom: 14px; gap: 8px; }
+  .cta-btn{ padding: .7rem .95rem; font-size: .95rem; }
+}
+
+
+/* =========================
+   ≤ 480px (xs)
+   ========================= */
+@media (max-width: 480px) {
+
+  /* H1/H2 más contenidos */
+  .hero-text h1{ font-size: 1.9rem; }
+  .hero-text h2{ font-size: .98rem; }
+
+  /* Botones redondos compactos */
+  .btn-primary, .btn-secondary{
+    padding: .72rem 1.1rem;
+    border-width: 2px;
+  }
+
+  /* Tarjetas: icono más pequeño y texto cómodo */
+  .exp-card__icon img{ width: 68px; }
+  .invest-card__icon img{ width: 72px; }
+  .invest-card{ min-height: 220px; padding: 1.8rem 1.4rem; }
+
+  /* Contacte: mapa */
+  .contact-map__card iframe{ height: 300px; }
+
+  /* Footer textos */
+  .footer-text h2{ font-size: 1.6rem; }
+  .footer-links{ gap: .8rem; }
+}
+
+/* =========================================================
+   🔹 NAVBAR RESPONSIVE DESPLEGABLE
+   ========================================================= */
+
+/* Botón hamburguesa */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 42px;
+  height: 42px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 26px;
+  background: var(--text-dark);
+  border-radius: 3px;
+  transition: 0.3s ease;
+}
+
+.hamburger::before { transform: translateY(-7px); }
+.hamburger::after { transform: translateY(4px); }
+
+/* Animación al abrir */
+.menu-toggle.active .hamburger {
+  background: transparent;
+}
+.menu-toggle.active .hamburger::before {
+  transform: rotate(45deg);
+}
+.menu-toggle.active .hamburger::after {
+  transform: rotate(-45deg);
+  translate: 0 -3px;
+}
+
+/* Menú móvil (oculto por defecto) */
+@media (max-width: 768px) {
+  .menu-toggle { display: flex; }
+
+  .navbar{ position: relative; }
+
+/* Menú compacto, debajo del botón (derecha) */
+    .nav-links{
+    position: absolute;
+    top: calc(100% + 10px);     /* debajo del navbar */
+    right: 12px;                /* alineado al botón */
+    left: auto;                 /* evita pegarse a la izquierda */
+    width: clamp(220px, 70vw, 320px);   /* tamaño más pequeño */
+    max-height: min(70vh, 440px);       /* por si hay muchos links */
+    overflow: auto;
+
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.12);
+    padding: .85rem 1rem;
+
+    flex-direction: column;
+    align-items: stretch;
+    gap: .6rem;
+
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transform-origin: top right;
+    transition: opacity .18s ease, transform .18s ease;
+    z-index: 2000;
+    }
+
+    .nav-links.show{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    }
+
+    /* Links más compactos */
+    .nav-links li{ width: 100%; }
+    .nav-links a{
+    display: block;
+    padding: .55rem .2rem;
+    font-size: .98rem;
+    line-height: 1.1;
+    border-radius: 10px;
+    }
+    .nav-links a:hover{
+    background: #f5f7fb;
+    }
+
+    .hero{
+    margin-top: 14px;                 /* separa del header */
+    min-height: auto;
+    padding-top: 0.5rem;
+  }
+
+  /* Apilar y centrar contenido del hero */
+  .hero-container{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    padding: 1.5rem 1rem 1.25rem;     /* un pelín más de aire */
+    width: min(90%, 640px);
+  }
+
+  /* Ocultar imagen del hero en responsive */
+  .hero-image,
+  .hero-image-2{
+    display: none !important;
+  }
+
+  /* Centrar textos */
+  .hero-text{
+    text-align: center;
+    margin: 0 auto;
+    max-width: 680px;
+    max-width: 90%;
+  }
+
+  /* Centrar los botones */
+  .hero-buttons{
+    display: flex;                    /* por si no lo era ya */
+    justify-content: center;
+    align-items: center;
+    gap: .9rem;
+    margin-top: 1rem;
+  }
+
+   .exp-header h3 {
+    display: none !important;
+  }
+
+  /* 🔹 Hacer las tarjetas más pequeñas y mantenerlas centradas */
+  .experience.section .exp-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;       /* centradas horizontalmente */
+    gap: 1rem;
+  }
+
+  .experience.section .exp-card {
+    flex: 0 1 48%;                 /* ocupa el 50% del ancho aprox. */
+    max-width: 240px;              /* límite para no crecer demasiado */
+    padding: 1rem 0.75rem 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,.05);
+  }
+
+  .experience.section .exp-card__icon img {
+    width: 68px;
+    height: auto;
+  }
+
+   /* 🔹 Ocultar subtítulo en el bloque "El nostre equip" */
+  .page-index .clinica-card__text h3,
+  .clinica-card__text h3 {
+    display: none !important;
+  }
+}
+
+/* === TRACTAMENTS: hero más alto y H1 centrado en móvil/tablet === */
+@media (max-width: 768px) {
+  /* El propio bloque hero */
+   /* Hero general */
+  .page-tractaments .hero {
+    margin-top: 14px !important;       /* misma separación con el header */
+    min-height: 220px !important;      /* mismo alto que el resto */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 1.5rem 1rem !important;
+  }
+
+  /* Contenedor interno */
+  .page-tractaments .hero-container {
+    width: min(92%, 720px) !important;
+    min-height: 180px !important;      /* ↑ altura */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;     /* centra vertical */
+    justify-content: center !important; /* centra horizontal */
+    text-align: center !important;
+    padding: 1.25rem 1rem !important;   /* algo de aire interno */
+    gap: .5rem !important;
+  }
+
+  /* Títulos del hero */
+  .page-tractaments #hero-tractaments h1 {
+    margin: 0 !important;
+    font-size: clamp(1.8rem, 4.5vw, 2.2rem) !important;
+  }
+  .page-tractaments #hero-tractaments h2,
+  .page-tractaments #hero-tractaments h3 {
+    display: none !important;           /* como pediste antes */
+  }
+}
+
+@media (max-width: 768px) {
+  /* 🔹 Igualar tamaño de H1 en página EQUIP */
+  .page-equip .hero h1 {
+    font-size: clamp(1.8rem, 4.5vw, 2.2rem) !important;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  /* 🔹 Ajustar contenedor del hero */
+  .page-equip .hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 160px; /* igual que en Tractaments */
+    padding: 1.5rem 1rem;
+  }
+
+  .page-equip .hero {
+    margin-top: 14px !important;       /* misma separación que el resto */
+    min-height: 180px !important;      /* mismo alto que en tractaments */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 2rem 1rem !important;
+  }
+
+  .page-equip .hero-container {
+    width: min(92%, 720px) !important;
+    min-height: 180px !important;      /* ↑ altura */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;     /* centra vertical */
+    justify-content: center !important; /* centra horizontal */
+    text-align: center !important;
+    padding: 1.25rem 1rem !important;   /* algo de aire interno */
+    gap: .5rem !important;
+  }
+
+  .page-equip .hero h1 {
+    font-size: clamp(1.8rem, 4.5vw, 2.2rem) !important;
+    margin: 0 !important;
+  }
+  
+}
+
+/* =========================================================
+   🔹 HERO NOSALTRES (igual que TRACTAMENTS)
+   ========================================================= */
+@media (max-width: 768px) {
+
+  /* Hero igual que el de tractaments */
+  .page-nosaltres .hero {
+    margin-top: 14px !important;       /* misma separación con el header */
+    min-height: 220px !important;      /* misma altura que tractaments */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 1.5rem 1rem !important;
+  }
+
+  .page-nosaltres .hero-container {
+     width: min(92%, 720px) !important;
+    min-height: 180px !important;      /* ↑ altura */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;     /* centra vertical */
+    justify-content: center !important; /* centra horizontal */
+    text-align: center !important;
+    padding: 1.25rem 1rem !important;   /* algo de aire interno */
+    gap: .5rem !important;
+  }
+
+  /* Título principal */
+  .page-nosaltres .hero h1 {
+    font-size: clamp(1.8rem, 4.5vw, 2.2rem) !important;
+    margin: 0 !important;
+  }
+
+  /* 🔹 Ocultar subtítulo del hero */
+  .page-nosaltres .hero h2 {
+    display: none !important;
+  }
+
+   /* 🔹 Sección "Per què triar la Clínica Dental Ribas?" */
+  .page-nosaltres .invest-text h3 {
+    display: none !important;          /* oculta el subtítulo */
+  }
+
+  .page-nosaltres .invest-text h2 {
+    padding-left: 0.75rem !important;  /* más sangría izquierda */
+    line-height: 1.4;
+  }
+
+   /* 🔹 Centrar las tarjetas del bloque Tractaments en Nosaltres */
+  .page-nosaltres .experience.section .exp-grid {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center !important;   /* centra horizontalmente */
+    align-items: center;
+    gap: 0.9rem;                           /* separación entre tarjetas */
+    padding: 0 1rem;                       /* aire lateral */
+  }
+
+  .page-nosaltres .experience.section .exp-card {
+    flex: 0 1 44%;                         /* dos por fila */
+    max-width: 180px;
+    min-height: 160px;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 4px 14px rgba(0,0,0,.04);
+  }
+
+  .page-nosaltres .experience.section .exp-card__icon img {
+    width: 58px;
+    height: auto;
+  }
+
+  .page-nosaltres .experience.section .exp-card h3 {
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+  }
+}
+
+/* =========================================================
+   🔹 HERO MÚTUES (igual que los demás heroes)
+   ========================================================= */
+@media (max-width: 768px) {
+
+  /* Hero general */
+  .page-mutues .hero {
+    margin-top: 14px !important;       /* misma separación con el header */
+    min-height: 220px !important;      /* mismo alto que el resto */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 1.5rem 1rem !important;
+  }
+
+  /* Contenedor interno */
+  .page-mutues .hero-container {
+    width: min(92%, 720px) !important;
+    min-height: 180px !important;      /* ↑ altura */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;     /* centra vertical */
+    justify-content: center !important; /* centra horizontal */
+    text-align: center !important;
+    padding: 1.25rem 1rem !important;   /* algo de aire interno */
+    gap: .5rem !important;
+  }
+
+  /* Título principal */
+  .page-mutues .hero h1 {
+    font-size: clamp(1.8rem, 4.5vw, 2.2rem) !important;
+    margin: 0 !important;
+  }
+
+  /* 🔹 Ocultar subtítulos */
+  .page-mutues .hero h2,
+  .page-mutues .hero h3 {
+    display: none !important;
+  }
+}
+
+/* =========================================================
+   🔹 HERO CONTACTE (unificado con el resto) – móvil/tablet
+   ========================================================= */
+@media (max-width: 768px) {
+
+  /* Hero: mismo alto, margen y centrado */
+  .page-contacte .hero {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-direction: column !important;
+    text-align: center !important;
+    margin-top: 14px !important;
+    min-height: 220px !important;
+    padding: 1.5rem 1rem !important;
+  }
+
+  .page-contacte .hero-container {
+    width: min(92%, 720px) !important;
+    min-height: 180px !important; 
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: min(92%, 720px) !important;
+    text-align: center !important;
+    padding: 1.25rem 1rem !important;
+    gap: .5rem !important;
+  }
+
+  .page-contacte .hero h1 {
+    margin: 0 !important;
+    text-align: center !important;
+    font-size: clamp(1.8rem, 4.5vw, 2.2rem) !important;
+  }
+
+  /* Ocultar todo lo demás dentro del hero */
+  .page-contacte .hero h2,
+  .page-contacte .hero p,
+  .page-contacte .hero .hero-buttons,
+  .page-contacte .hero .btn-primary,
+  .page-contacte .hero .btn-secondary {
+    display: none !important;
+  }
+}
+
+/* =========================================================
+   Endodòncia / pàgines de tractament — ajustes responsive
+   ========================================================= */
+@media (max-width: 768px){
+
+  /* 1) Ocultar el H2 del HERO */
+  .page-tractament .hero .hero-text h2{
+    display: none !important;
+  }
+
+  /* 2) Ocultar los párrafos intro de los blocs 2, 3 y 4 */
+  .page-tractament #simptomes p,
+  .page-tractament #beneficis p,
+  .page-tractament #reserva p{
+    display: none !important;
+  }
+
+  /* 3) Botón “Reserva ara” más compacto */
+  .page-tractament #reserva .btn-primary{
+    min-width: 180px;
+    padding: .75rem 1.1rem;
+    font-size: .95rem;
+    box-shadow: 0 8px 20px rgba(9,124,63,.16);
+  }
+}
+
+/* Afinado extra en móviles muy pequeños */
+@media (max-width: 480px){
+  .page-tractament #reserva .btn-primary{
+    min-width: 160px;
+    padding: .68rem 1rem;
+    font-size: .92rem;
+  }
+}
+
+

@@ -10,20 +10,24 @@
   <link rel="stylesheet" href="styles/reset.css" />
   <link rel="stylesheet" href="styles/style.css" />
   <link rel="stylesheet" href="styles/pages.css" />
+  <link rel="stylesheet" href="styles/responsive.css" />
 </head>
 
 <body class="page-legal">
-  <!-- 🔹 NAVBAR -->
+  <!-- 🔹 NAVBAR CLÍNICA DENTAL RIBAS -->
   <header>
     <nav class="navbar">
+      <!-- Logo -->
       <a href="index.html" class="logo">
         <img src="img/logo-clinica-ribas.webp" alt="Clínica Dental Ribas Logo" />
       </a>
 
+      <!-- Botón menú móvil -->
       <button class="menu-toggle" aria-label="Obrir menú">
         <span class="hamburger"></span>
       </button>
 
+      <!-- Menú principal -->
       <ul class="nav-links">
         <li><a href="tractaments.html">Tractaments</a></li>
         <li><a href="equip.html">Equip</a></li>
@@ -147,6 +151,35 @@
       if (window.scrollY > 100) cta.classList.add('visible');
       else cta.classList.remove('visible');
     });
+  </script>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav-links');
+
+    function closeMenu(){
+      toggle.classList.remove('active');
+      nav.classList.remove('show');
+    }
+
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggle.classList.toggle('active');
+      nav.classList.toggle('show');
+    });
+
+    // Cerrar al hacer click fuera
+    document.addEventListener('click', (e) => {
+      if (!nav.contains(e.target) && !toggle.contains(e.target)) closeMenu();
+    });
+
+    // Cerrar si se redimensiona por encima de 768px
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) closeMenu();
+    });
+
+    // Cerrar al pinchar un enlace del menú
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
   </script>
 </body>
 </html>
