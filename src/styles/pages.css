@@ -428,8 +428,8 @@
 
 /* 🔹 Imágenes uniformes */
 .page-mutues .mutua-card img {
-  width: 120px;
-  height: 70px;
+  width: 148px;
+  height: auto;
   object-fit: contain;
   background-color: #fff;
   border-radius: 8px;
