@@ -735,3 +735,99 @@
 }
 
 
+@media (max-width: 768px) {
+
+  /* Contenedor de tarjetas centrado horizontalmente */
+  .page-index .experience.section .exp-grid,
+  .container.exp-grid {
+    display: flex !important;
+    flex-wrap: nowrap !important;         /* todas en una fila */
+    justify-content: center !important;   /* 🔹 centradas horizontalmente */
+    align-items: center !important;
+    gap: 0.7rem !important;               /* espacio entre tarjetas */
+    overflow-x: auto !important;
+    padding: 0.5rem 1rem !important;
+    grid-template-columns: none !important;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Tarjetas pequeñas */
+  .page-index .experience.section .exp-card {
+    flex: 0 0 auto !important;
+    width: 120px !important;
+    min-height: 120px !important;
+    padding: 0.7rem 0.5rem !important;
+    border-radius: 12px;
+    text-align: center;
+    scroll-snap-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,.05);
+    background: linear-gradient(180deg, #f9fffc 0%, #ebfff5 100%);
+  }
+
+  .page-index .experience.section .exp-card__icon img {
+    width: 46px !important;
+    height: auto;
+  }
+
+  .page-index .experience.section .exp-card h3 {
+    font-size: 0.85rem !important;
+    margin-top: 0.4rem;
+  }
+
+  /* Ocultar scrollbar (estético) */
+  .page-index .experience.section .exp-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .page-index .experience.section .exp-grid {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* =========================================================
+   TRACTAMENTS – Grid 4×N en móvil/tablet
+   ========================================================= */
+@media (max-width: 768px) {
+
+  /* 4 columnas, bien distribuidas y centradas */
+  .page-tractaments .experience.section .exp-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important; /* 🔹 4 columnas */
+    gap: 0.6rem !important;
+    justify-items: center;
+    align-items: stretch;
+    padding: 0 .75rem;
+    overflow: visible !important;
+  }
+
+  /* Tarjetas compactas */
+  .page-tractaments .experience.section .exp-card {
+    width: 100%;
+    max-width: 130px;               /* 🔹 más estrechas para que quepan 4 */
+    min-height: 140px;
+    padding: .6rem .4rem;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.05);
+    background: linear-gradient(180deg, #f9fffc 0%, #ebfff5 100%);
+  }
+
+  /* Iconos y textos ajustados */
+  .page-tractaments .experience.section .exp-card__icon img {
+    width: 42px;
+    height: auto;
+  }
+
+  .page-tractaments .experience.section .exp-card h3 {
+    font-size: 0.85rem;
+    margin-top: 0.35rem;
+  }
+}
+
+/* Si hay reglas que sobreescriben a ≤600px, forzamos mantener 4 columnas */
+@media (max-width: 600px) {
+  .page-tractaments .experience.section .exp-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+}
