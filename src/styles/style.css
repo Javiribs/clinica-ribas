@@ -255,12 +255,12 @@ header.is-stuck { box-shadow: 0 6px 18px rgba(15,23,42,.06); }
   margin-right: 4rem;           /* distancia al borde derecho */
 }
 
-.hero-image-2 img{
+.hero-image-2 img {
   display: block;
   width: auto;
-  height: 360px;                /* ajusta aquí (340–400px) */
+  height: 440px; /* antes 360px */
   object-fit: contain;
-  transform: translateY(6px);   /* apoya visualmente en el borde inferior */
+  transform: translateY(6px);
   filter: drop-shadow(0 10px 24px rgba(0,0,0,.12));
 }
 
