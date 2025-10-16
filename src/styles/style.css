@@ -404,109 +404,75 @@ header.is-stuck { box-shadow: 0 6px 18px rgba(15,23,42,.06); }
 }
 
 
-/* ------- SECCIÓN EQUIP ------- */
-
-/* --- Contenedor externo para centrar como el hero principal --- */
-.clinica-wrap{
-  display:flex;
-  justify-content:center;
-  padding: 3rem 0;              /* separa de lo anterior/siguiente */
-  background:#fff;
+/* ===== HERO ESTILO “EQUIP” (tipo hero general) ===== */
+.hero--equip {
+  background-color: #fff;
+  padding: 4rem 0;
 }
 
-/* --- Tarjeta con MISMAS medidas y curvas que .hero-container --- */
-.clinica-card{
-  position: relative;
+.hero--equip .hero-container {
   width: 72%;
   max-width: 1400px;
-  min-height: 380px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
   border-radius: 3rem;
-  overflow: hidden;                     /* recorta la foto en las curvas */
-  box-shadow: 0 8px 24px rgba(0,0,0,.08);
-
-  /* Foto de fondo (puedes cambiarla desde el inline style --bg) */
-  background-image: var(--bg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 35% 38%;  
-  aspect-ratio: 18 / 7;           
-  min-height: 260px; 
+  box-shadow:
+    0 12px 36px rgba(0, 0, 0, 0.12),
+    0 20px 60px rgba(9, 124, 63, 0.15);
+  overflow: hidden;
+  background: linear-gradient(180deg, #f9fffc 0%, #ebfff5 100%);
+  padding: 3rem 4rem;
 }
 
-/* Difuminado verde idéntico al del hero principal */
-.clinica-card::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    radial-gradient(circle at top left,  rgba(111,255,176, .20), transparent 60%),
-    radial-gradient(circle at bottom right, rgba(111,255,176, .15), transparent 60%);
-  z-index:0;
+/* Texto a la izquierda */
+.hero--equip .hero-text {
+  flex: 0 1 55%;
+  text-align: left;
 }
 
-.clinica-card::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background: linear-gradient(90deg, rgba(0,128,96, .12) 0%, rgba(0,128,96, .10) 100%);
-  z-index:0;
-  pointer-events:none;
-}
-
-/* Capa de contenido (texto izquierda / botón derecha) */
-.clinica-card__content{
-  position: relative;
-  z-index: 1;
-  height: 100%;
-  display: grid;
-  grid-template-columns: 1fr minmax(520px,760px) 1fr; /* aire - centre - aire */
-  grid-template-rows: auto auto;                      /* fila 1: text, fila 2: botó */
-  justify-items: center;
-  align-items: start;
-  gap: .6rem;
-  padding: 1rem 4rem 1.5rem;
-}
-
-/* Texto */
-.clinica-card__text{
-  padding-top: 40px;
-  grid-column: 2;
-  grid-row: 1;               
-  text-align: center;
-  max-width: none;
-  transform: none;
-}
-
-.clinica-card__text h2{
-  font-size: 2.6rem;
-  margin-bottom: .75rem;
-  font-family: "Nunito",'Arial Rounded MT Bold', sans-serif;
+.hero--equip .hero-text h1 {
+  font-family: "Nunito", "Arial Rounded MT Bold", sans-serif;
+  font-size: 2.5rem;
   color: var(--text-dark);
+  margin-bottom: 1rem;
 }
 
-.clinica-card__text h3{
-  font-size: 1.1rem;
+.hero--equip .hero-text h2 {
+  font-size: 1.15rem;
   font-weight: 500;
   color: var(--text-dark);
-  max-width: 72ch;             /* ancho legible */
-  line-height: 1.5;
-  margin: 0 auto;              /* centra el bloque */
+  opacity: 0.9;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 600px;
 }
 
-.clinica-card__content .btn-primary{
-  grid-column: 2;
-  grid-row: 2;               /* <- assegura que va a la fila 2 */
-  justify-self: center;
-  margin-top: .5rem;
-  position: static !important; /* per si algun estil global l’havia posat absolute */
+.hero--equip .hero-buttons {
+  display: flex;
+  gap: 1rem;
 }
 
-/* Botón (usa tu .btn-primary existente; por si acaso aquí un refuerzo) */
-.btn-primary{
-  flex-shrink: 0;
-  white-space: nowrap;
+/* Imagen a la derecha */
+.hero--equip .hero-image-2 {
+  flex: 0 1 40%;
+  display: flex;
+  justify-content: flex-end;
+  align-self: center !important;  /* anula el flex-end global */
+  margin-top: 0 !important;
+}
+
+.hero--equip .hero-image-2 img {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  border-radius: 1.5rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  object-fit: cover;
+  filter: brightness(1.05);
+  transform: translateY(-20px); /* sube ligeramente la imagen */
 }
 
 
