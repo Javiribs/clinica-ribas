@@ -222,6 +222,7 @@
     padding: 8px 14px;
     font-size: .95rem;
   }
+  
 
   /* Grids a 1 columna */
   .exp-grid,
@@ -786,48 +787,327 @@
 }
 
 /* =========================================================
-   TRACTAMENTS – Grid 4×N en móvil/tablet
+   TRACTAMENTS – Grid 3×N en móvil/tablet
    ========================================================= */
 @media (max-width: 768px) {
 
-  /* 4 columnas, bien distribuidas y centradas */
+  /* 🔹 3 columnas, centradas y con espacio entre ellas */
   .page-tractaments .experience.section .exp-grid {
     display: grid !important;
-    grid-template-columns: repeat(4, minmax(0, 1fr)) !important; /* 🔹 4 columnas */
-    gap: 0.6rem !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important; /* ✅ 3 columnas */
+    gap: 0.7rem !important;
     justify-items: center;
     align-items: stretch;
-    padding: 0 .75rem;
+    padding: 0 1rem;
     overflow: visible !important;
   }
 
-  /* Tarjetas compactas */
+  /* 🔹 Tarjetas más proporcionadas */
   .page-tractaments .experience.section .exp-card {
     width: 100%;
-    max-width: 130px;               /* 🔹 más estrechas para que quepan 4 */
-    min-height: 140px;
-    padding: .6rem .4rem;
+    max-width: 140px;            /* ajustado para 3 por fila */
+    min-height: 150px;
+    padding: .7rem .5rem;
     text-align: center;
-    border-radius: 12px;
+    border-radius: 14px;
     box-shadow: 0 4px 12px rgba(0,0,0,.05);
     background: linear-gradient(180deg, #f9fffc 0%, #ebfff5 100%);
   }
 
-  /* Iconos y textos ajustados */
+  /* 🔹 Iconos y texto adaptados */
   .page-tractaments .experience.section .exp-card__icon img {
-    width: 42px;
+    width: 46px;
     height: auto;
   }
 
   .page-tractaments .experience.section .exp-card h3 {
-    font-size: 0.85rem;
-    margin-top: 0.35rem;
+    font-size: 0.9rem;
+    margin-top: 0.4rem;
   }
 }
 
-/* Si hay reglas que sobreescriben a ≤600px, forzamos mantener 4 columnas */
+
+/* =========================================================
+   TRACTAMENTS – Ajustes para pantallas pequeñas (≤600px)
+   ========================================================= */
 @media (max-width: 600px) {
+  /* 🔹 2 columnas centradas */
   .page-tractaments .experience.section .exp-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important; /* ✅ ahora 2 columnas */
+    gap: 0.7rem !important;
+    justify-items: center;
+    padding: 0 0.5rem !important;
+  }
+
+  /* 🔹 Tarjetas proporcionadas */
+  .page-tractaments .experience.section .exp-card {
+    width: 100% !important;
+    max-width: 150px !important;
+    min-height: 120px !important;
+    padding: 0.6rem 0.5rem !important;
+    border-radius: 12px !important;
+    background: linear-gradient(180deg, #f9fffc 0%, #ebfff5 100%);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    text-align: center;
+  }
+
+  /* 🔹 Iconos más pequeños */
+  .page-tractaments .experience.section .exp-card__icon img {
+    width: 38px !important;
+    height: auto;
+  }
+
+  .page-tractaments .experience.section .exp-card__icon img{
+    width: 36px !important;                 /* -2px */
+    height: auto;
+  }
+
+  /* títulos que no ensanchan la tarjeta */
+  .page-tractaments .experience.section .exp-card h3{
+    font-size: 0.82rem !important;          /* -0.03rem */
+    line-height: 1.2;
+    margin-top: 0.35rem !important;
+    text-align: center;
+    white-space: normal;                     /* puede saltar de línea */
+    word-break: break-word;                  /* rompe palabras largas */
+    overflow-wrap: anywhere;
+    hyphens: auto;
+    display: -webkit-box;                    /* 2 líneas máx. */
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
 }
+
+
+
+/* =========================================================
+   🔹 HERO HOME — más estrecho + sin h3 en móviles
+   ========================================================= */
+@media (max-width: 600px) {
+  /* Solo afecta al hero de la home */
+  body:not(.page-nosaltres):not(.page-equip):not(.page-mutues):not(.page-contacte):not(.page-tractaments) .hero-container {
+    width: 84% !important;            /* 🔹 aún más estrecho */
+    max-width: 320px !important;      /* 🔹 reduce el límite */
+    padding: 1rem 0.9rem !important;  /* 🔹 ajusta el aire interior */
+    border-radius: 1.6rem !important;
+  }
+
+  /* Ajustar altura del bloque hero */
+  body:not(.page-nosaltres):not(.page-equip):not(.page-mutues):not(.page-contacte):not(.page-tractaments) .hero {
+    min-height: auto !important;
+    margin-top: 1rem !important;
+    justify-content: center !important;
+  }
+
+  /* Centrar texto y reducir tipografía */
+  .hero-text {
+    text-align: center !important;
+    margin: 0 auto !important;
+  }
+
+  .hero-text h1 {
+    font-size: clamp(1.2rem, 5.5vw, 1.6rem) !important; /* 🔹 más pequeño */
+    line-height: 1.25 !important;
+  }
+
+  .hero-text h2 {
+    display: none !important;
+  }
+
+  /* Ocultar imagen del hero */
+  .hero-image,
+  .hero-image-2 {
+    display: none !important;
+  }
+}
+
+/* =========================================================
+   🔹 Secció "La nostra experiència" — Menys espai en mòbils
+   ========================================================= */
+@media (max-width: 600px) {
+  .experience.section {
+    padding: 2.5rem 0 3rem 0 !important; /* 🔹 abans: 6rem 0 */
+  }
+
+  /* També pots reduir una mica el gap entre el títol i les targetes */
+  .exp-header {
+    margin-bottom: 1.5rem !important;
+  }
+
+  /* I opcionalment ajustar l'espai intern de cada targeta */
+  .exp-card {
+    padding: 0.8rem 0.6rem 1rem !important;
+  }
+}
+
+
+/* =========================================================
+   HOME — Experiència: botón debajo del título en móviles
+   ========================================================= */
+@media (max-width: 600px) {
+  /* Contenedor principal */
+  .experience .exp-header {
+    display: flex !important;
+    flex-direction: column !important;  /* apilar título y botón */
+    align-items: center !important;     /* centrar contenido */
+    text-align: center !important;
+    gap: 0.8rem;
+  }
+
+  /* El bloque de títulos ocupa todo el ancho */
+  .experience .exp-header__titles {
+    width: 100% !important;
+  }
+
+  /* Botón debajo del título */
+  .experience .exp-header .btn-primary {
+    order: 2 !important;
+    margin-top: 0.5rem !important;
+    align-self: center !important;      /* centrado */
+    padding: 0.6rem 1rem !important;
+    font-size: 0.95rem !important;
+  }
+}
+
+/* =========================================================
+   INDEX — Tarjetas experiencia ultra-compactas (móviles pequeños)
+   ========================================================= */
+
+/* Móviles comunes (≤ 600px) */
+@media (max-width: 600px) {
+  .experience .exp-grid {
+    display: flex !important;
+    flex-wrap: nowrap !important;          /* 1 sola fila */
+    justify-content: center !important;
+    align-items: stretch !important;
+    gap: .5rem !important;
+    overflow-x: auto !important;           /* evita solapes: permite scroll */
+    padding: .5rem .75rem !important;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .experience .exp-card {
+    flex: 0 0 auto !important;             /* tamaño fijo, no se estira */
+    width: 110px !important;
+    min-height: 118px !important;
+    padding: .6rem .45rem !important;
+    border-radius: 12px;
+    text-align: center;
+    scroll-snap-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,.05);
+  }
+
+  .experience .exp-card__icon img {
+    width: 42px !important;
+    height: auto;
+  }
+
+  .experience .exp-card h3 {
+    font-size: .82rem !important;
+    line-height: 1.15 !important;
+    margin-top: .35rem !important;
+    white-space: nowrap;                    /* evita saltos raros */
+  }
+}
+
+/* Móviles muy pequeños (iPhone 12 Mini/SE y similares ≤ 400px) */
+@media (max-width: 400px) {
+  .experience .exp-grid { gap: .45rem !important; padding: .45rem .6rem !important; }
+
+  .experience .exp-card {
+    width: 96px !important;                /* 🔹 aún más pequeñas */
+    min-height: 106px !important;
+    padding: .5rem .4rem !important;
+    border-radius: 10px;
+  }
+
+  .experience .exp-card__icon img { width: 36px !important; }
+  .experience .exp-card h3 { font-size: .75rem !important; }
+}
+
+/* Oculta la barra de scroll (estético) */
+.experience .exp-grid::-webkit-scrollbar { display: none; }
+.experience .exp-grid { -ms-overflow-style: none; scrollbar-width: none; }
+
+
+/* =========================================================
+   INDEX — Experiència: 2 columnas x 2 filas (móviles)
+   ========================================================= */
+@media (max-width: 600px) {
+  .experience .exp-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important; /* 🔹 2 columnas */
+    gap: 0.8rem !important;                            /* 🔹 separación */
+    justify-items: center !important;
+    align-items: stretch !important;
+    width: 92% !important;
+    margin: 0 auto !important;
+    padding: 0.5rem 0 !important;
+  }
+
+  .experience .exp-card {
+    width: 100% !important;
+    max-width: 160px !important;
+    min-height: 140px !important;
+    padding: 0.75rem 0.5rem !important;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    background: linear-gradient(180deg, #f9fffc 0%, #ebfff5 100%);
+  }
+
+  .experience .exp-card__icon img {
+    width: 52px !important;
+    height: auto;
+  }
+
+  .experience .exp-card h3 {
+    font-size: 0.9rem !important;
+    line-height: 1.2 !important;
+    margin-top: 0.45rem !important;
+  }
+}
+
+/* =========================================================
+   INDEX — Secció "Confía en la nostra Clínica dental" (invest)
+   ========================================================= */
+@media (max-width: 600px) {
+  .invest-text h2 {
+    font-size: 25.6px !important; /* 🔹 més petit */
+    line-height: 1.25 !important;                     /* 🔹 més compacte */
+    max-width: 18ch !important;                       /* 🔹 evita línies molt llargues */
+    margin: 0 auto 0.5rem auto !important;            /* 🔹 centra i separa una mica */
+    text-align: center !important;
+  }
+
+  .invest-text h3 {
+    font-size: clamp(0.9rem, 3.8vw, 1rem) !important;
+    line-height: 1.4 !important;
+    text-align: center !important;
+    max-width: 36ch !important;
+    margin: 0 auto !important;
+  }
+}
+
+/* =========================================================
+   🔹 Secció "Confía en la nostra Clínica dental" (invest)
+   ========================================================= */
+@media (max-width: 600px) {
+  .invest {
+    padding: 2.5rem 1.5rem 2.8rem 1.5rem !important; /* 🔹 antes: ~6rem 2rem */
+  }
+
+  /* Opcional: reducir margen entre el título y las tarjetas */
+  .invest-text {
+    margin-bottom: 1.6rem !important;
+  }
+
+  /* Ajustar las tarjetas al nuevo espacio */
+  .invest-card {
+    padding: 0.8rem 0.6rem 1rem !important;
+  }
+}
+
+
+
