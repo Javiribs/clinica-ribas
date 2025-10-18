@@ -377,6 +377,7 @@
     background: #f5f7fb;
     }
 
+  /* Hero: ajustes HOME */
     .hero{
     margin-top: 14px;                 /* separa del header */
     min-height: auto;
@@ -1108,6 +1109,135 @@
     padding: 0.8rem 0.6rem 1rem !important;
   }
 }
+
+/* 📱 Ocultar iconos de las fichas de la sección .invest en móviles */
+@media (max-width: 600px) {
+  .invest-card__icon { 
+    display: none !important; 
+  }
+
+  /* Ajustes de la tarjeta cuando no hay icono */
+  .invest-card {
+    min-height: auto;
+    padding: 1.4rem 1.2rem;
+  }
+
+  .invest-card h3 { 
+    margin-bottom: .35rem; 
+  }
+}
+
+/* =============== TRACTAMENTS (solo responsive, scoping por #tractaments) =============== */
+
+/* ≤1200px: 3 columnas */
+@media (max-width: 1200px) {
+  #tractaments .exp-grid{
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1.25rem !important;
+  }
+}
+
+/* ≤992px: 2 columnas */
+@media (max-width: 992px) {
+  #tractaments .exp-grid{
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.25rem !important;
+  }
+}
+
+/* ≤768px: tarjetas más compactas (igual que index) */
+@media (max-width: 768px) {
+  /* títulos centrados como en la home */
+  #tractaments .exp-header__titles{
+    text-align: center !important;
+  }
+  #tractaments .exp-header__titles h2{
+    margin-bottom: .25rem !important;
+  }
+  #tractaments .exp-header__titles h3{
+    max-width: 600px !important;
+    margin: 0 auto 1.25rem !important;
+    font-size: 1.05rem !important;
+    line-height: 1.5 !important;
+  }
+
+  /* grid 2×N y proporciones de tarjeta */
+  #tractaments .exp-grid{
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important;
+    width: min(1100px, 92%) !important;
+    margin-inline: auto !important;
+    padding-top: 1rem !important;
+  }
+
+  #tractaments .exp-card{
+    min-height: 160px !important;
+    padding: 1.2rem 1rem 3.2rem !important;
+    border-radius: 18px !important;
+  }
+
+  #tractaments .exp-card__icon img{
+    width: 76px !important;
+  }
+
+  #tractaments .exp-card h3{
+    font-size: 1rem !important;
+    margin-top: .4rem !important;
+    text-align: center !important;
+  }
+}
+
+/* ≤600px: igual que index (2 columnas centradas, tarjeta + pequeña) */
+@media (max-width: 600px) {
+  #tractaments .exp-grid{
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: .8rem !important;
+    justify-items: center !important;
+    width: 92% !important;
+    margin: 0 auto !important;
+    padding: .5rem 0 !important;
+  }
+
+  #tractaments .exp-card{
+    width: 100% !important;
+    max-width: 160px !important;
+    min-height: 140px !important;
+    padding: .75rem .5rem !important;
+    border-radius: 14px !important;
+    text-align: center !important;
+  }
+
+  #tractaments .exp-card__icon img{
+    width: 52px !important;
+    height: auto !important;
+  }
+
+  #tractaments .exp-card h3{
+    font-size: .9rem !important;
+    line-height: 1.2 !important;
+    margin-top: .45rem !important;
+  }
+}
+
+/* ≤480px: ajuste fino como en la home */
+@media (max-width: 480px) {
+  #tractaments .exp-card{
+    max-width: 150px !important;
+    min-height: 130px !important;
+    padding: .65rem .45rem 1rem !important;
+    border-radius: 12px !important;
+  }
+  #tractaments .exp-card__icon img{ width: 46px !important; }
+  #tractaments .exp-card h3{ font-size: .85rem !important; }
+}
+
+/* 📱 Ocultar cabecera del bloque de contacto en móviles */
+@media (max-width: 600px) {
+  .contact-rows__header {
+    display: none !important;
+  }
+}
+
 
 
 
