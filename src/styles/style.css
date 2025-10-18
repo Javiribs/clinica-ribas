@@ -264,6 +264,31 @@ header.is-stuck { box-shadow: 0 6px 18px rgba(15,23,42,.06); }
   filter: drop-shadow(0 10px 24px rgba(0,0,0,.12));
 }
 
+/* Botón “Veure tots” debajo de las fichas */
+.exp-footer {
+  display: flex;
+  justify-content: flex-end; /* alinea a la derecha */
+  width: min(1100px, 92%);
+  margin: 2rem auto 0;       /* separa del grid */
+}
+
+.exp-footer .btn-primary {
+  padding: 0.9rem 1.8rem;
+  font-weight: 600;
+  border: 2px solid #097C3F;
+  color: #097C3F;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.exp-footer .btn-primary:hover {
+  background-color: #097C3F;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(9, 124, 63, 0.25);
+}
+
+
 /* ====== Experiència amb degradat translúcid ====== */
 :root{
   --mint-light: rgba(111, 255, 176, 0.25);
