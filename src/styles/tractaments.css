@@ -168,6 +168,14 @@
   transition: opacity 0.3s ease;
 }
 
+@media (max-width: 600px) {
+  .page-tractaments .intro {
+    display: none !important;      /* no solo oculta, elimina el espacio */
+    padding: 0 !important;         /* por si hay padding residual */
+    margin: 0 !important;
+    height: 0 !important;
+  }
+}
 
 /* CTA flotant: es mostra en scroll (classes ja definides al projecte) */
 /* .floating-cta.visible { opacity:1; transform: translateY(0); }  — ja definit a style.css */
