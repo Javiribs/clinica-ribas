@@ -734,6 +734,11 @@ header.is-stuck { box-shadow: 0 6px 18px rgba(15,23,42,.06); }
   color: rgba(0,0,0,0.4);
 }
 
+/* ===== Ocultar logo visualmente en el footer ===== */
+.footer-container img {
+  display: none !important;
+}
+
 
 /* ===== Botones flotantes teléfono/WhatsApp ===== */
 .floating-cta {
