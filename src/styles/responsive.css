@@ -1302,6 +1302,10 @@
     gap: .6rem;
   }
 
+  .hero-text h1 {
+  margin: 0 !important;
+  }
+
   /* 🔹 Mostrar la imagen inline y ocultar la lateral */
  .hero-inline{
   display: block;
@@ -1317,7 +1321,7 @@
   .hero-inline img{
     display: block;
     width: 100%;
-    height: 190px;                    /* recorte vertical */
+    height: 195px;                    /* recorte vertical */
     object-fit: cover;                /* recorta sin deformar */
     object-position: 50% 18%;         /* 👈 ajusta foco (brazos) */
   }
